@@ -7,10 +7,10 @@
 <html>
     
 	<head>
-		<title>Read Only by HTML5 UP</title>
+		<title>Andreas Vourkos</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="description" content="Andreas Vourkos personal blog" />
+		<meta name="keywords" content="android,monetization" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery.scrollzer.min.js"></script>
@@ -22,8 +22,6 @@
 			<link rel="stylesheet" href="/css/skel.css" />
 			<link rel="stylesheet" href="/css/style.css" />
 			<link rel="stylesheet" href="/css/style-xlarge.css" />
-			<link rel="shortcut icon" type="image/png" href="/images/favicon.png" >
-
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -63,12 +61,11 @@
         
             <article>
                 <header>
-                    <h2><a href="/android/2016/01/15/Working-with-overlays.html">“Working with overlays - Part 1“</a></h2>
-                    <h5>15 January 2016| android</h5>
+                    <h2><a href="/android/2016/01/15/Working-with-overlays.html">Working with overlays - Life under WindowManager</a></h2>
+                    <h5>15 January 2016| Android</h5>
                 </header>
                 <section class="post-content">
-                    <p>Hello overlays</p>
-
+                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Onboarding tutorials</li> <li>Floating buttons/menus</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <p>In this article we will see how we can create an overlay view with the help of WindowManager.</p> <h2>Life under WindowManager</h2> <p>But let’s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager:</a></p> <ul> <li>A system service</li> <li>Creates and allocates surfaces for the clients (applications) - (requests SurfaceManager). Is responsible of which windows are visible, their z-order and how they are laid on the screen</li> <li>WindowManager never deals with the bits of the created surfaces, it is up to the clients to do so, and they do it directly without going through the WindowManager</li> </ul> <p>A WindowManager can be easily obtained:</p> <p><code>WindowManager wm = (WindowManager) Context.getSystemService(WINDOW_SERVICE); </code></p> <p><code> adb shell dumpsys window </code></p> <p>With WindowManager you can easily add an overlay view on top of everything. Depending on where you want this overlay view to be placed, you either have to obtain reference to the WindowManager and add the view to the window of an Activity or a Service.</p> <ol> <li><b>Activity</b> - Overlay view is relevant to...
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -100,12 +97,11 @@
         
             <article>
                 <header>
-                    <h2><a href="/android/2016/01/15/Working-with-overlays.html">“Working with overlays - Part 1“</a></h2>
+                    <h2><a href="/android/2016/01/15/Working-with-overlays.html">Working with overlays - Life under WindowManager</a></h2>
                     <h5>15 January 2016</h5>
                 </header>
                 <section class="post-content">
-                    <p>Hello overlays</p>
-
+                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Onboarding tutorials</li> <li>Floating buttons/menus</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <p>In this article we will see how we can create an overlay view with the help of WindowManager.</p> <h2>Life under WindowManager</h2> <p>But let’s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager:</a></p> <ul> <li>A system service</li> <li>Creates and allocates surfaces for the clients (applications) - (requests SurfaceManager). Is responsible of which windows are visible, their z-order and how they are laid on the screen</li> <li>WindowManager never deals with the bits of the created surfaces, it is up to the clients to do so, and they do it directly without going through the WindowManager</li> </ul> <p>A WindowManager can be easily obtained:</p> <p><code>WindowManager wm = (WindowManager) Context.getSystemService(WINDOW_SERVICE); </code></p> <p><code> adb shell dumpsys window </code></p> <p>With WindowManager you can easily add an overlay view on top of everything. Depending on where you want this overlay view to be placed, you either have to obtain reference to the WindowManager and add the view to the window of an Activity or a Service.</p> <ol> <li><b>Activity</b> - Overlay view is relevant to...
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -129,9 +125,8 @@
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+                <li>&copy; Andreas Vourkos. All rights reserved.</li>
+                <li>A Jekyll Theme by: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
     </section>

@@ -7,10 +7,10 @@
 <html>
     
 	<head>
-		<title>Read Only by HTML5 UP</title>
+		<title>Andreas Vourkos</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="description" content="Andreas Vourkos personal blog" />
+		<meta name="keywords" content="android,monetization" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery.scrollzer.min.js"></script>
@@ -22,8 +22,6 @@
 			<link rel="stylesheet" href="/css/skel.css" />
 			<link rel="stylesheet" href="/css/style.css" />
 			<link rel="stylesheet" href="/css/style-xlarge.css" />
-			<link rel="shortcut icon" type="image/png" href="/images/favicon.png" >
-
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -61,12 +59,101 @@
                 <section>
     <div class="container">
         <header class="major">
-            <h2>“Working with overlays - Part 1“</h2>
-                <p class="post-meta">Jan 15, 2016 | android</p>
+            <h2>Working with overlays - Life under WindowManager</h2>
+                <p class="post-meta">Jan 15, 2016 | Android</p>
         </header>
 
         <section class="post-content">
-            <p>Hello overlays</p>
+            <p>This is the start of a series of articles regarding creating and using overlays on Android.  An overlay is a view that is placed above other views.  Such views can be created on Android with several different ways and for different purposes.</p>
+
+<p>There are several usages for overlays on Android. Some of them include:</p>
+
+<ol>
+<li>Onboarding tutorials</li>
+<li>Floating buttons/menus</li>
+<li>Advertising</li>
+<li>Augmented Reality</li>
+<li>Fancy animations</li>
+</ol>
+
+<p>In this article we will see how we can create an overlay view with the help of WindowManager.</p>
+
+<h2>Life under WindowManager</h2>
+
+<p>But let’s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager:</a></p>
+
+<ul>
+<li>A system service</li>
+<li>Creates and allocates surfaces for the clients (applications) - (requests SurfaceManager). Is responsible of which windows are visible, their z-order and how they are laid on the screen</li>
+<li>WindowManager never deals with the bits of the created surfaces, it is up to the clients to do so, and they do it directly without going through the WindowManager</li>
+</ul>
+
+<p>A WindowManager can be easily obtained:</p>
+
+<p><code>WindowManager wm = (WindowManager) Context.getSystemService(WINDOW_SERVICE); </code></p>
+
+<p><code> adb shell dumpsys window </code></p>
+
+<p>With WindowManager you can easily add an overlay view on top of everything. Depending on where you want this overlay view to be placed, you either have to obtain reference to the WindowManager and add the view to the window of an Activity or a Service.</p>
+
+<ol>
+<li><b>Activity</b> - Overlay view is relevant to the activity </li>
+<li><b>Service</b>  - Overlay view lays above the system, on any screen above the service window</li>
+</ol>
+
+<h4>1. Overlay above an activity</h4>
+
+<p>Once you add an overlay view with window manager through an activity, a new window with its own view hierarchy is created and added above the current window of the activity. As far as the activity is not destroyed there is no issue. However, once that activity is destroyed a leak occurs if the overlay view is not priorly removed.</p>
+
+<p>If we dive deeper into this, we will see that what happens is relevant to window tokens. You can read more about window tokens <a heref="http://www.androiddesignpatterns.com/2013/07/binders-window-tokens.html">here. </a>. If we see into Android code, in <a heref="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/WindowManagerImpl.java"> WindowManagerImpl</a> implementation, when an activity is destroyed WindowManagerImpl tries to close all windows associated with a specific token. This is the point where a window leak will occur.</p>
+
+<p><code>
+public void closeAll(IBinder token, String who, String what) {
+        synchronized (this) {
+            if (mViews == null)
+                return;</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        int count = mViews.length;
+        //Log.i("foo", "Closing all windows of " + token);
+        for (int i=0; i&lt;count; i++) {
+            //Log.i("foo", "@ " + i + " token " + mParams[i].token
+            //        + " view " + mRoots[i].getView());
+            if (token == null || mParams[i].token == token) {
+                ViewRootImpl root = mRoots[i];
+                root.mAddNesting = 1;
+                
+                //Log.i("foo", "Force closing " + root);
+                if (who != null) {
+                    WindowLeaked leak = new WindowLeaked(
+                            what + " " + who + " has leaked window "
+                            + root.getView() + " that was originally added here");
+                    leak.setStackTrace(root.getLocation().getStackTrace());
+                    Log.e("WindowManager", leak.getMessage(), leak);
+                }
+
+                removeViewLocked(i);
+                i--;
+                count--;
+            }
+        }
+    }
+} &lt;/code&gt;
+</code></pre>
+</div>
+
+<p>So what we can do as a workaround to avoid a window loadk and keep our overlay window above the system is to define our token</p>
+
+<p><code> params.token=new Binder();</code></p>
+
+<p>This way we make the overlay view stay alive and be independent of our app’s activities lifecycle. However once the app is destroyed overlay window will be removed too.</p>
+
+<p><img src="/images/android/initial_state.png" /></p>
+
+<p><img src="/images/android/overlayed_app.png" /></p>
+
+<p><img src="/images/android/with_activity_overlay.png" /></p>
+
+<p><code>&lt;uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/&gt;</code></p>
 
         
         </section>
@@ -86,9 +173,8 @@
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+                <li>&copy; Andreas Vourkos. All rights reserved.</li>
+                <li>A Jekyll Theme by: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
     </section>

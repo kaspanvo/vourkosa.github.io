@@ -26,7 +26,7 @@ In this article we will see how we can create an overlay view that will lie on t
 But let's see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager.</a> WindowManager is a system service responsible for organizing the screen. It interacts with applications to create windows and decides where they will go on the screen and in which order. When creating a window, WindowManager requests a Surface for that window and on that Surface, an application will draw its user interface. Each window is a container of views and has its own view hierarchy.
 
 
-<u>But let's be more specific and list what a WindowManager is:</u>
+<u>But let's be more specific and list what a WindowManager is and what it does:</u>
 <ul>
 <li>A system service </li>
 <li>It requests the creation and allocation of surfaces for the clients (applications)</li>
@@ -408,4 +408,81 @@ WINDOW MANAGER TOKENS (dumpsys window tokens)
 
 This trick allows the Overlay view to live as far as the app lives. Once the application stops the Overlay view is removed too.
 
-As we may realize the approached described above does not allow us to be able to place an Overlay view above other applications when the application or in some cases the activity are not alive any more. However if we ned to place an overlay on top of our app or an activity of the app this can be an option. However since it requires granting a permission manually by the user through the app's settings it should be avoided.
+
+<h4>2. Overlay through a service</h4>
+
+Another way to create an Overlay as a System Window that will be added above other applications is by adding that overlay through WindowManager in the same way as described in previous section but through a service that can run in the background.
+
+A common usage of this approach can be found in Facebook chatheads and other popular apps. You just have to declare the service in the app's AndroidManifest file.
+
+```java
+<service android:name=".OverlayService"></service>
+```
+
+and start or stop the service at any time:
+
+```java
+    Intent intent = new Intent(activity, OverlayService.class);
+    activity.startService(intent);
+```
+
+```java
+    Intent intent = new Intent(activity, OverlayService.class);
+    activity.stopService(intent);
+```
+
+<img src="{{ site.baseurl }}/images/android/androidhead.png">
+
+
+```java
+public class OverlayService extends Service {
+
+	private WindowManager wm;
+    private ImageView androidHead;
+  
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        
+        androidHead = new ImageView(this);
+        androidHead.setImageResource(R.drawable.ic_launcher);
+
+        wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+
+        final WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+        
+        params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.type = WindowManager.LayoutParams.TYPE_PRIORITY_PHONE;
+        params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        params.format = PixelFormat.TRANSLUCENT;
+        params.gravity = Gravity.TOP | Gravity.LEFT;
+
+        wm.addView(androidHead, params);
+
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        removeView();
+    }
+
+    private void removeView() {
+        if (androidHead != null) {
+            wm.removeView(androidHead);
+        }
+    }
+}
+```
+
+As we have seen there are different ways to place overlays above an app or other apps by using WindowManager. However the need of requesting a special permission especially since Android Marshmallow or the need of declaring and using a service to keep the overlay independent of an app's or activity's lifecycle makes this approach less convenient.

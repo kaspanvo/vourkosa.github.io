@@ -407,3 +407,5 @@ WINDOW MANAGER TOKENS (dumpsys window tokens)
 <img src="{{ site.baseurl }}/images/android/overlay_app.png">
 
 This trick allows the Overlay view to live as far as the app lives. Once the application stops the Overlay view is removed too.
+
+As we may realize the approached described above does not allow us to be able to place an Overlay view above other applications when the application or in some cases the activity are not alive any more. However if we ned to place an overlay on top of our app or an activity of the app this can be an option. However since it requires granting a permission manually by the user through the app's settings it should be avoided.

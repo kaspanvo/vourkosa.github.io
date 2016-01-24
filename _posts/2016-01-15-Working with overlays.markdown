@@ -69,7 +69,7 @@ However since Android Marshmallow a special request is required with a direct ac
 Since Android 6.0 developers can call <b><a href="http://developer.android.com/reference/android/provider/Settings.html#canDrawOverlays(android.content.Context)" target="_blank">Settings.canDrawOverlays() </a></b> to check if the specific context was granted permission in order to draw on top of other apps. If permission hasn't been granted yet, user can create and fire an Intent with destination set to <b>Settings.ACTION\_MANAGE\_OVERLAY\_PERMISSION</b> accompanied with URI of the package name of the app to send users directly to give permission to your app yo draw above others.
 
 ```java
-public static int OVERLAY_PERMISSION_REQ_CODE = 1234;  
+public static int OVERLAY_PERMISSION_CODE = 2525;  
 
 public void addOverlay() {     
 	if (!Settings.canDrawOverlays(this)) {         
@@ -86,7 +86,7 @@ and then when the user returns to the app a check is made if permission was gran
 @Override 
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {    
  
- if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {         
+ if (requestCode == OVERLAY_PERMISSION_CODE) {         
  		if (!Settings.canDrawOverlays(this)) {             
  		// SYSTEM_ALERT_WINDOW permission not granted...         
  		}     

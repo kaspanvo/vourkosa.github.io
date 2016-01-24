@@ -13,4 +13,8 @@ gems: [jekyll-paginate]
 paginate: 6
 paginate_path: "page:num"
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+redcarpet:
+    extension:
+        - fenced_code_blocks
+highlighter: pygments

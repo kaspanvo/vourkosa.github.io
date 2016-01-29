@@ -7,7 +7,7 @@ layout: default
     
         <header class="major">
             <h2>{{ page.title }}</h2>
-                <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} | {{ page.categories | join: ', ' }}</p>
+                <p class="post-meta">{{ page.date |  date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}&nbsp;&nbsp; | &nbsp;&nbsp; {{ page.categories | join: ', ' }}    </p>  
         </header>
 
         <section class="post-content">
@@ -15,17 +15,19 @@ layout: default
         
         </section>
        
-       <div class="share-page">
+ 
+ <div class="share-page">
     <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
-    <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
-    <a href=" http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{page.title}}&source={{page.author}}" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
-    <a href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
+    &nbsp;&nbsp;<a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    &nbsp;&nbsp;<a href=" http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{page.title}}&source={{page.author}}" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    &nbsp;&nbsp;<a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
+    &nbsp;&nbsp;<a href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
 
 
 
 </div>
-
+</br>
+</br>
 {% if page.comments %}
 <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -47,12 +49,13 @@ layout: default
 {% endif %}
 
         <footer>
+        <div class="foot">
             {% if page.previous %}
-            <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
+            <a href="{{ page.previous.url }}" class="button special2">Previous</a> {% endif %}
             {% if page.next %}
-            <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+           <a href="{{ page.next.url }}" class="button special2">Next</a>{% endif %}
         </footer>
-
+  </div>
     </div>
 
 </section>

@@ -26,4 +26,5 @@ An appropriate plan for the on-boarding process would be firstly to inspire the 
 <li><b>Monetisation</b> - If app publisher manages to get user excited and engaged then that can be a good time to start applying monetization. However, even at that point the publisher should consider and adapt different monetization techniques. For example, different (lower) pricing could be used early on for IAP or for virtual goodies. Ad monetization should be integrated in the look and fill for the app and evolve as part of the flow of the app.</li>
 </ul>
 
+</br>
 As we already discussed, getting the user excited and then engaged after acquiring him is one of the “proper”ways for monetizing that user. First time experience is vital for an app’s success and publishers should plan their monetization strategy having that in mind.

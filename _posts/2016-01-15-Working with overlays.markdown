@@ -21,7 +21,7 @@ There are several usages for overlays on Android. Some of them include:
 
 
 
-<h2>Life under WindowManager</h2>
+<h3>Life under WindowManager</h3>
 
 In this article we will see how we can create an overlay view that will lie on top of other applications with the help of WindowManager.
 

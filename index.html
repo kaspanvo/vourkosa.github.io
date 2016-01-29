@@ -8,9 +8,10 @@ layout: default
             <article>
                 <header>
                     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-                    <h5>{{ post.date | date: "%-d %B %Y" }}| {{ post.categories | join: ', ' }}</h5>
+                    <h5>{{ post.date | date: "%-d %B %Y" }}&nbsp;&nbsp;| &nbsp;&nbsp;{{ post.categories | join: ', ' }}</h5>
                 </header>
                 <section class="post-content">
+                </br>
                     {{ post.content | truncatewords: 260 }}
                 </section>
                 <section class="special">

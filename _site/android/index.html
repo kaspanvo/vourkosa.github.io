@@ -17,6 +17,7 @@
 			<link rel="stylesheet" href="/css/skel.css" />
 			<link rel="stylesheet" href="/css/style.css" />
 			<link rel="stylesheet" href="/css/style-xlarge.css" />
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -28,8 +29,10 @@
         <header>
             <span class="image avatar"><img src="/images/avatar.png" alt="" /></span>
             <h1 id="logo"><a href="/">Andreas Vourkos</a></h1>
-            <p>Struggling with mobile app monetization? Working on it at <a href="https://www.pollfish.com" target="_blank">Pollfish</a><br/><br/>
-           The mobile engineer behind Pollfish Android and iOS SDKs</p>
+              <p>Building mobile apps since the early days of J2ME...</p>
+            <span class="image pollfish"><a href="https://www.pollfish.com" target="_blank"> <img  src="/images/polfish.png" alt="" /></a></span>
+          <p>The mobile engineer behind Pollfish Android and iOS SDKs</p>
+
         </header>
         <nav id="nav">
             <ul>
@@ -55,12 +58,12 @@
     <div class="container">
       
             <article>
-                <header>
+                      <header>
                     <h2><a href="/android/2016/01/15/Working-with-overlays.html">Working with overlays - Life under WindowManager</a></h2>
-                    <h5>15 January 2016| Android</h5>
+                    <h5>15 January 2016&nbsp;&nbsp;| &nbsp;&nbsp;Android</h5>
                 </header>
                 <section class="post-content">
-                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Floating buttons/menus</li> <li>Onboarding tutorials</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <h2>Life under WindowManager</h2> <p>In this article we will see how we can create an overlay view that will lie on top of other applications with the help of WindowManager.</p> <p>But let&#39;s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager.</a> WindowManager is a system service responsible for organizing the screen. It interacts with applications to create windows and decides where they will go on the screen and in which order. When creating a window, WindowManager requests a Surface for that window and on that Surface, an application will draw its user interface. Each window is a container of views and has its own view hierarchy.</p> <p><u>But let&#39;s be more specific and list what a WindowManager is and what it does:</u> <ul> <li>A system service </li> <li>It requests the creation and allocation of surfaces for the clients (applications)</li> <li>Is responsible of which windows are visible, their z-order and how they are laid on the screen </li> <li>It deals and dispatches input and focus events to clients </li>...
+                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Floating buttons/menus</li> <li>Onboarding tutorials</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <h3>Life under WindowManager</h3> <p>In this article we will see how we can create an overlay view that will lie on top of other applications with the help of WindowManager.</p> <p>But let&#39;s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager.</a> WindowManager is a system service responsible for organizing the screen. It interacts with applications to create windows and decides where they will go on the screen and in which order. When creating a window, WindowManager requests a Surface for that window and on that Surface, an application will draw its user interface. Each window is a container of views and has its own view hierarchy.</p> <p><u>But let&#39;s be more specific and list what a WindowManager is and what it does:</u> <ul> <li>A system service </li> <li>It requests the creation and allocation of surfaces for the clients (applications)</li> <li>Is responsible of which windows are visible, their z-order and how they are laid on the screen </li> <li>It deals and dispatches input and focus events to clients </li>...
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -244,7 +247,7 @@
     <section id="footer">
         <div class="container">
             <ul class="copyright">
-                <li>&copy; Andreas Vourkos 2015. All rights reserved.</li>
+                <li>&copy; Andreas Vourkos 2016. All rights reserved.</li>
                 <li>A Jekyll Theme by: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>

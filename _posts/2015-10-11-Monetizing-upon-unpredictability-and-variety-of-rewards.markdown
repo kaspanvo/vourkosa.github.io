@@ -12,7 +12,7 @@ The influence of unpredictability and variety of rewards can be seen in many asp
 Back in early 50’s B.F. Skinner used an operant conditioning chamber (known as <a href="https://en.wikipedia.org/wiki/Operant_conditioning_chamber" target="_blank"> Skinner Box</a>) to perform experiments and study behaviour conditioning (training) by teaching a subject animal to perform certain actions (like pressing a lever) in response to specific stimuli, such as a light or sound signal in exchange for a reward (food, stop the sound signal etc.). These experiments showed that subject animals that were receiving each time the same reward (for example the exact same food) were initially excited repeating the same action many times, however as time was passing this behaviour was becoming saturated and subject animals would press the leaver to receive food only when hungry. On the other side, subject animals that were receiving a variety of rewards like different size or type of food kept pressing the lever like crazy in the anticipation on what would be the next reward. 
 
 
-<img src="{{ site.baseurl }}/images/monetization/rewards1.gif" >
+<img src="{{ site.baseurl }}/images/monetization/skinner.jpg" >
 
 If we study this experiment carefully we will see that it also appears in many cases of a human’s life and the consequent reactions that follow have to do with the problem solving nature of human in a similar reaction that subject animals had in the aforementioned experiment. People, when faced with an unpredictable positive feedback on an action like a reward, instinct tells them to do that action again. Once an action ends up to a predicted result, it is not fascinating any more and is just another action or tool available in the surrounding environment.
 
@@ -71,9 +71,9 @@ Another great example on how users react to an unpredicted reward or action, is 
 Another approach followed by several app developers, is giving the option to their app’s users (as an “extra feature” irrelevant to the game concept) to play on a “wheel of fortune” in order to get a not fixed price, usually virtual coins. This wheel is implemented in the concept of daily rewards and is not always available to the users, in order to drive user obsession for more gifts and increase re-engagement to the app. Some of the times, it is not clearly defined on what would the price be of a specific slot and user has the chance to win something big or small, that is unknown. The wheel approach is a better alternative to classic daily reward system approach that lots of small apps follow today, by prompting their users to visit every day their app in order to earn a fixed standard credit.
 
 <b>Collecting a Mystery Box </b>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-lG-l8bP8TY" frameborder="0" allowfullscreen></iframe>
-
+     <div class="foot">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-lG-l8bP8TY" frameborder="0" align="middle" allowfullscreen></iframe>
+</div></br>
 
 Following up the wheel of fortune approach, a similar concept is including of what is called “mystery boxes” within an app that delivers non predefined prizes; and users can collect, find or visit within the app. This is a great approach for driving addiction and engagement on the users of an app. A good example of this technique can be seen in Subway Surfers app where users are able to collect several Mystery Boxes and win a variety of prizes. As you may see in the video above the user challenges himself on how many boxes he can collect and explore what prizes they are hiding inside them.
 

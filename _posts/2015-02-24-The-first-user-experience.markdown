@@ -1,0 +1,29 @@
+---
+layout: post
+title:  The first user experience
+date:   2015-02-24 18:45:20
+categories: Monetization
+tag: monetization
+comments: true
+---
+Planning a monetization strategy upfront, is a key point towards an app’s monetization success. Including in this strategy a proper handling of user’s first experience, during the on-boarding process of the app, is quite important.
+
+Getting an app visible and being downloaded many times is the first goal in the app store battle. App publishers can achieve that either through proper ASO or a well designed marketing plan or any other way. Keeping users engaged with the app, after downloading it, is the next achievement to be accomplished and therefore the on-boarding experience is very crucial. After all, you get a first experience only once!
+
+It is widely known that most of the users abandon an app early on, and in particular, the first time that they try to use it. Several developers ignore this fact and usually do not separate, nor consider the on-boarding experience in their monetization strategy.
+
+Through Pollfish network we have seen several examples and bad practises that affect first user experience. One of them, is overflowing users with ads in different parts of the app even before users are familiar with what the app can do and what it can offer, resulting to frustrated users leaving the app.
+
+App publishers should not try to monetize their app too soon. Applying monetization techniques too early can affect retention. User first experience should be treated wisely and without the goal on an ephemeral revenue but focusing on increasing LTV for each user in the long run.
+
+<img src="{{ site.baseurl }}/images/monetization/first_exp.png">
+
+An appropriate plan for the on-boarding process would be firstly to inspire the user about the app’s potential, engage him and then try to monetize him:
+
+<ul>
+<li><b>Excitement</b> - Users should get excited with app’s first experience. First time users, usually do not know what to expect from an app. App publishers should be able to show the real value of the app from the beginning and there are not a lot of chances on doing that. Therefore, during first app experience, full potential of the app should be exposed. If an app publisher manages to get users excited and give a glance on what to expect during the usage of the app, then the publisher is already one step ahead towards engagement. Depending on the content or type of the app this can be achieved through a small tutorial, or an interactive guide. Keep in mind though, that at that point of time, user should not receive superfluous information. Friction from steps like forced logins, should be avoided in general and loading time should me minimised or treated by giving something to the users while waiting.</li>
+<li><b>Engagement</b> - Managing to engage the user is also very important during the first experience of the app. Users should be able to move around and follow the flow of the app quite easily.This can be done with a proper UI design and content continuous reveal. For games for example, users should be able to proceed easily, at the beginning, to next levels rather than getting stuck on the first level too long. Early progress usually brings engagement and increases excitement too. Moreover, applying different first time user experiences can be a good approach that can eventually convert.</li>
+<li><b>Monetisation</b> - If app publisher manages to get user excited and engaged then that can be a good time to start applying monetization. However, even at that point the publisher should consider and adapt different monetization techniques. For example, different (lower) pricing could be used early on for IAP or for virtual goodies. Ad monetization should be integrated in the look and fill for the app and evolve as part of the flow of the app.</li>
+</ul>
+
+As we already discussed, getting the user excited and then engaged after acquiring him is one of the “proper”ways for monetizing that user. First time experience is vital for an app’s success and publishers should plan their monetization strategy having that in mind.

@@ -63,7 +63,7 @@
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			border: 0;
-			color: inherit;
+			color: #4acaa8;
 			text-decoration: none;
 		}
 
@@ -1031,7 +1031,7 @@
 					border: 0;
 					color: #ffffff !important;
 					display: block;
-					padding: 0.85em 0;
+					padding: 0.15em 0;
 					text-decoration: none;
 				}
 
@@ -1070,14 +1070,35 @@
 	#one:before {
 
 	}
+	
+	.share-page {
+    text-align: left;
+    background: $secondary-color;
+    color: $light-color;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 4.5 * $spacing-unit 20;
+
+    a {
+        font-weight: 1000;
+        color: #fff;
+        margin-left: 10px;
+        margin-right: 10px;
+        &:hover {
+            border-bottom: 1px dashed #fff;
+        }
+    }
+}
+
 
 /* Footer */
 
 	#footer {
 		background: #fafafa;
 		border-top: 0;
+   		bottom:0;
 		overflow: hidden;
-		padding: 1em 0 1em 0;
+		padding: 1em 0 0em 0;
 	}
 
 		#footer .copyright {

@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<section id="one" >
+<section >
     <div class="container">
-        {% for post in site.posts limit:5 %}
+{% for post in paginator.posts limit:4%}
             <article>
                 <header>
                     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
                     <h5>{{ post.date | date: "%-d %B %Y" }}| {{ post.categories | join: ', ' }}</h5>
                 </header>
                 <section class="post-content">
-                    {{ post.content | truncatewords: 230 }}
+                    {{ post.content | truncatewords: 260 }}
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -31,14 +31,14 @@ layout: default
   {% else %}
     
   {% endif %}
-  <span class="page_number "> <!--{{ paginator.page }} / {{ paginator.total_pages }} --></span>
+  <span class="page_number"> <!--{{ paginator.page }} / {{ paginator.total_pages }} --></span>
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="button special2">Next</a>
   {% else %}
 
   {% endif %}
 </div>
-
+</section>
 
 <!--{% if paginator.total_pages > 1 %}
 <div class="pagination">
@@ -108,4 +108,4 @@ layout: default
         {% endfor %}
         </div>
     </div>
-</section>-->
+-->

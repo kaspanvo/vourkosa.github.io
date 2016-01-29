@@ -2,15 +2,16 @@
 layout: default
 ---
 
-<section id="one" >
+<section >
     <div class="container">
-        {% for post in site.posts limit:1 %}
+      {% for post in  site.tags['android'] %}
             <article>
                 <header>
                     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                    <h5>{{ post.date | date: "%-d %B %Y" }}| {{ post.categories | join: ', ' }}</h5>
                 </header>
                 <section class="post-content">
-                    {{ post.excerpt }}
+                    {{ post.content | truncatewords: 230 }}
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -20,8 +21,28 @@ layout: default
             </article>
         {% endfor %}
     </div>
+
 </section>
-<section>
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}"  class="button special2">Previous</a>
+  {% else %}
+    
+  {% endif %}
+  <span class="page_number "> <!--{{ paginator.page }} / {{ paginator.total_pages }} --></span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="button special2">Next</a>
+  {% else %}
+
+  {% endif %}
+</div>
+</section>
+
+<!--<section>
     <div class="container">
         <div class="features">
         {% for post in site.posts offset:1 %}
@@ -43,4 +64,4 @@ layout: default
         {% endfor %}
         </div>
     </div>
-</section>
+</section>-->

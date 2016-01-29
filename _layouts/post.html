@@ -2,7 +2,9 @@
 layout: default
 ---
 <section>
+ 
     <div class="container">
+    
         <header class="major">
             <h2>{{ page.title }}</h2>
                 <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} | {{ page.categories | join: ', ' }}</p>
@@ -13,6 +15,37 @@ layout: default
         
         </section>
        
+       <div class="share-page">
+    <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    <a href=" http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{page.title}}&source={{page.author}}" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
+    <a href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
+
+
+
+</div>
+
+{% if page.comments %}
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'vourkosa'; // required: replace example with your forum shortname
+    	var disqus_developer = 1; // Comment out when the site is live
+        var disqus_identifier = "{{ page.url }}";
+//s.src = '//vourkosa.disqus.com/embed.js';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+{% endif %}
+
         <footer>
             {% if page.previous %}
             <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}

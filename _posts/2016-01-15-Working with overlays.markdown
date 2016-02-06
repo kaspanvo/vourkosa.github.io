@@ -53,7 +53,7 @@ For example, during an application launch through ActivityMangerService, a Windo
 </ul>
 
 
-You can read more about window tokens and how they are handled, in the following articles: <a heref="http://www.androiddesignpatterns.com/2013/07/binders-window-tokens.html" >"Binders & Window Tokens" </a> and <a heref="http://blog.csdn.net/luoshengyang/article/details/8275938" >"Android application window (Activity) view objects (View) creation process analysis" </a>.
+You can read more about window tokens and how they are handled, in the following articles: <a href="http://www.androiddesignpatterns.com/2013/07/binders-window-tokens.html"  target="_blank">"Binders & Window Tokens" </a> and <a href="http://blog.csdn.net/luoshengyang/article/details/8275938"  target="_blank">"Android application window (Activity) view objects (View) creation process analysis" </a>.
 
 
 <u>There are 3 main classes of windows:</u>

@@ -13,6 +13,16 @@
 		<script src="/js/skel.min.js"></script>
 		<script src="/js/skel-layers.min.js"></script>
 		<script src="/js/init.js"></script>
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73073179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 		<noscript>
 			<link rel="stylesheet" href="/css/skel.css" />
 			<link rel="stylesheet" href="/css/style.css" />
@@ -60,11 +70,28 @@
       
             <article>
                       <header>
+                    <h2><a href="/android/2016/02/06/Working-with-overlays-PhoneWindow-a-not-so-famous-window.html">Working with overlays - PhoneWindow, a not-so-famous window</a></h2>
+                    <h5>6 February 2016&nbsp;&nbsp;| &nbsp;&nbsp;Android</h5>
+                </header>
+                <section class="post-content">
+                     </br>
+                    <p>In this article we will discuss how we can create an overlay view above an Activity with the help of PhoneWindow and its inner class DecorView.</p> <p>As we discussed in previous post, when an Activity is launched, a window is created in order to render the views and interact with the user. Usually this is a full screen window but developers have also the option to display a non full screen activity with the relevant Theme (like floating windows or render activity through a group of other activities like in an ActivityGroup).</p> <p>But what happens under the hood? If we...
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="/android/2016/02/06/Working-with-overlays-PhoneWindow-a-not-so-famous-window.html" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </article>
+        
+            <article>
+                      <header>
                     <h2><a href="/android/2016/01/15/Working-with-overlays.html">Working with overlays - Life under WindowManager</a></h2>
                     <h5>15 January 2016&nbsp;&nbsp;| &nbsp;&nbsp;Android</h5>
                 </header>
                 <section class="post-content">
-                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Floating buttons/menus</li> <li>Onboarding tutorials</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <h3>Life under WindowManager</h3> <p>In this article we will see how we can create an overlay view that will lie on top of other applications with the help of WindowManager.</p> <p>But let&#39;s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager.</a> WindowManager is a system service responsible for organizing the screen. It interacts with applications to create windows and decides where they will go on the screen and in which order. When creating a window, WindowManager requests a Surface for that window and on that Surface, an application will draw its user interface. Each window is a container of views and has its own view hierarchy.</p> <p><u>But let&#39;s be more specific and list what a WindowManager is and what it does:</u> <ul> <li>A system service </li> <li>It requests the creation and allocation of surfaces for the clients (applications)</li> <li>Is responsible of which windows are visible, their z-order and how they are laid on the screen </li> <li>It deals and dispatches input and focus events to clients </li>...
+                     </br>
+                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Floating buttons/menus</li> <li>Onboarding tutorials</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <h3>Life under WindowManager</h3> <p>In this article we will see how we can create an overlay view that will lie on top of other applications with the help of WindowManager.</p> <p>But let&#39;s see first what is...
                 </section>
                 <section class="special">
                     <ul class="actions">
@@ -94,6 +121,22 @@
 <!--<section>
     <div class="container">
         <div class="features">
+        
+            <article>
+                <section class="excerpt">
+                <header>
+                    <h3><a href="/android/2016/01/15/Working-with-overlays.html">Working with overlays - Life under WindowManager</a></h3>
+                </header>
+                
+                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can...
+                </section>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="/android/2016/01/15/Working-with-overlays.html" class="button">Read More</a></li>
+                    </ul>
+                </footer>
+                <div class="clear"></div>
+            </article>
         
             <article>
                 <section class="excerpt">

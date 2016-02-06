@@ -7,7 +7,7 @@ layout: default
     
         <header class="major">
             <h2>{{ page.title }}</h2>
-                <p class="post-meta">{{ page.date |  date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}&nbsp;&nbsp; | &nbsp;&nbsp; {{ page.categories | join: ', ' }}    </p>  
+                <p class="post-meta">{{ page.date |  date:  "%-d %B %Y"  }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}&nbsp;&nbsp; | &nbsp;&nbsp; {{ page.categories | join: ', ' }}    </p>  
         </header>
 
         <section class="post-content">

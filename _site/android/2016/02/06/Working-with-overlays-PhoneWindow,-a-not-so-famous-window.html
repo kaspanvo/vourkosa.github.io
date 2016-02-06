@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html>
+    
+	<head>
+		<title>Andreas Vourkos</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Andreas Vourkos personal blog" />
+		<meta name="keywords" content="android,monetization" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.scrollzer.min.js"></script>
+		<script src="/js/jquery.scrolly.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73073179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+		
+    <body>
+        <div id="wrapper">
+        <!-- Header -->
+    <section id="header" class="skel-layers-fixed">
+        <header>
+            <span class="image avatar"><img src="/images/avatar.png" alt="" /></span>
+            <h1 id="logo"><a href="/">Andreas Vourkos</a></h1>
+              <p>Building mobile apps since the early days of J2ME...</p>
+            <span class="image pollfish"><a href="https://www.pollfish.com" target="_blank"> <img  src="/images/polfish.png" alt="" /></a></span>
+          <p>The mobile engineer behind Pollfish Android and iOS SDKs</p>
+
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/android">Android Development</a></li>
+                <li><a href="/monetization">Monetization Tips</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <ul class="icons">
+                 <li><a href="https://twitter.com/vourkosa" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.linkedin.com/in/andreasvourkos" class="icon fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+                <li><a href="https://github.com/vourkosa" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+            <!-- Main -->
+            <div id="main">
+                <section>
+ 
+    <div class="container">
+    
+        <header class="major">
+            <h2>Working with overlays - PhoneWindow, a not-so-famous window</h2>
+                <p class="post-meta">Feb 6, 2016&nbsp;&nbsp; | &nbsp;&nbsp; Android    </p>  
+        </header>
+
+        <section class="post-content">
+            <p>In this article we will discuss how we can create an overlay view above an Activity with the help of PhoneWindow and its inner class DecorView.</p>
+
+<p>As we discussed in previous post, when an Activity is launched, a window is created in order to render the views and interact with the user. Usually this is a full screen window but developers have also the option to display a non full screen activity with the relevant Theme (like floating windows or render activity through a group of other activities like in an ActivityGroup).</p>
+
+<p>But what happens under the hood? If we dive deeper in Android source code we will see that most of all these, happen around an implementation of Window’s abstract class, which is called <a href="https://android.googlesource.com/platform/frameworks/base/+/7d276c3/policy/src/com/android/internal/policy/impl/PhoneWindow.java" target="_blank">PhoneWindow.</a> </p>
+
+<p>When an activity starts, the ActivityManager along with WindowManager request the creation of a PhoneWindow. PhoneWindow  is responsible for holding the activity’s view hierarchy. Creation of PhoneWindow is requested by activity’s attach internal method:</p>
+
+<p>Activity.java</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">final</span> <span class="kt">void</span> <span class="nf">attach</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">ActivityThread</span> <span class="n">aThread</span><span class="o">,</span>
+        <span class="n">Instrumentation</span> <span class="n">instr</span><span class="o">,</span> <span class="n">IBinder</span> <span class="n">token</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ident</span><span class="o">,</span>
+        <span class="n">Application</span> <span class="n">application</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="n">ActivityInfo</span> <span class="n">info</span><span class="o">,</span>
+        <span class="n">CharSequence</span> <span class="n">title</span><span class="o">,</span> <span class="n">Activity</span> <span class="n">parent</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">,</span>
+        <span class="n">NonConfigurationInstances</span> <span class="n">lastNonConfigurationInstances</span><span class="o">,</span>
+        <span class="n">Configuration</span> <span class="n">config</span><span class="o">,</span> <span class="n">String</span> <span class="n">referrer</span><span class="o">,</span> <span class="n">IVoiceInteractor</span> <span class="n">voiceInteractor</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">attachBaseContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+
+    <span class="o">...</span>
+
+    <span class="n">mWindow</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">PhoneWindow</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+    <span class="o">...</span>
+ <span class="o">}</span>
+</code></pre></div>
+<p>You can read a really insightful article on PhoneWindow and the whole window creation process <a href="http://blog.csdn.net/luoshengyang/article/details/8223770" target="_blank">here.</a> </p>
+
+<p><u>PhoneWindow has two important members:</u>
+<ul>
+<li><b>DecorView mDecor</b> – which is the top-level view of the window, containing the window decor (like the activity&#39;s window background) </li>
+<li><b>ViewGroup mContentParent</b> – which is the view in which the window contents are placed (for example the user&#39;s view layout) and is either the décor view itself, or a child of décor view where the contents go</li>
+</ul></p>
+
+<p>DecorView is an inner class of  PhoneWindow </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">DecorView</span> <span class="kd">extends</span> <span class="n">FrameLayout</span> <span class="kd">implements</span> <span class="n">RootViewSurfaceTaker</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+</code></pre></div>
+<p>and is nothing more than a a FrameLayout. DecorView is the root view in an activity’s window view hierarchy. Based on the theme specified for an activity or for the application in general (or any Window flags and features requested), the layout of DecorView is created. </p>
+
+<p>For example if developer has not requested any specific feature or flags, window&#39;s DecorView is installed and then its clild view is inflated from a layout resource xml file and added to the DecorView. The default basic layout is stored in a file is called screen_simple.xml. Depending on different settings a different layout resource is inflated.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">...</span>
+
+<span class="k">if</span><span class="o">(..){}</span>
+<span class="k">else</span> <span class="nf">if</span><span class="o">(..){}</span>
+<span class="k">else</span><span class="o">{</span>
+    <span class="n">layoutResource</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">screen_simple</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="o">...</span>
+
+<span class="n">View</span> <span class="n">in</span> <span class="o">=</span> <span class="n">mLayoutInflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">layoutResource</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">decor</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">in</span><span class="o">,</span> <span class="k">new</span> <span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="n">MATCH_PARENT</span><span class="o">,</span> <span class="n">MATCH_PARENT</span><span class="o">));</span>
+
+<span class="o">...</span>
+</code></pre></div>
+<p>If we look into <a href="https://github.com/android/platform_frameworks_base/blob/master/core/res/res/layout/screen_simple.xml" target="_blank">screen_simple.xml</a> file, we will see that it includes a simple LinearLayout with a ViewStub and a FrameLayout as child views.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="n">LinearLayout</span> <span class="nl">xmlns:</span><span class="n">android</span><span class="o">=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="nl">android:</span><span class="n">fitsSystemWindows</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+    <span class="nl">android:</span><span class="n">orientation</span><span class="o">=</span><span class="s">&quot;vertical&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ViewStub</span> <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">&quot;@+id/action_mode_bar_stub&quot;</span>
+              <span class="nl">android:</span><span class="n">inflatedId</span><span class="o">=</span><span class="s">&quot;@+id/action_mode_bar&quot;</span>
+              <span class="nl">android:</span><span class="n">layout</span><span class="o">=</span><span class="s">&quot;@layout/action_mode_bar&quot;</span>
+              <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">&quot;match_parent&quot;</span>
+              <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">&quot;wrap_content&quot;</span>
+              <span class="nl">android:</span><span class="n">theme</span><span class="o">=</span><span class="s">&quot;?attr/actionBarTheme&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">FrameLayout</span>
+         <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">&quot;@android:id/content&quot;</span>
+         <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">&quot;match_parent&quot;</span>
+         <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">&quot;match_parent&quot;</span>
+         <span class="nl">android:</span><span class="n">foregroundInsidePadding</span><span class="o">=</span><span class="s">&quot;false&quot;</span>
+         <span class="nl">android:</span><span class="n">foregroundGravity</span><span class="o">=</span><span class="s">&quot;fill_horizontal|top&quot;</span>
+         <span class="nl">android:</span><span class="n">foreground</span><span class="o">=</span><span class="s">&quot;?android:attr/windowContentOverlay&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">LinearLayout</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>If we do not explicity set our own content view when creating the Activity this is how our view hierarchy will be structured on a Nexus 4 running Android 4.3:</p>
+
+<p><img src="/images/android/simple.png"></p>
+
+<p>However, something that is worth mentioning here is the radical change of the view hierarchy structure under DecorView since Android Lollipop. As we may see in screenshot below, if we do not set any special flags nor we set our content view (like the previous example on Nexus 4) this is how the view hierarchy will be structured on a Nexus 5 running Android 5.1</p>
+
+<p><img src="/images/android/simple2.png"></p>
+
+<p>We can easily identify here that DecorView does not have a single LinearLayout as a child anymore but it also includes another two views, our status and navigation bar! The order of these views have an impact on several aspects of our view tree but we will cover this in a future article.</p>
+
+<h3>Setting a content view layout</h3>
+
+<p>Usually in onCreate(Bundle) function of an Activity, users are advised to use <a href="http://developer.android.com/reference/android/app/Activity.html#setContentView(android.view.View)" target="_blank">setContentView</a> to set an Activity’s content to a specific view layout. This view can either be inflated from a specific resource or through a programmatically created view.</p>
+
+<p><u>There are 3 options on how to set ContentView:</u>
+<ol>
+<li><b>setContentView (View view)</b> - Set the activity content to an explicit view.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContentView</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">setContentView</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="k">new</span> <span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="n">MATCH_PARENT</span><span class="o">,</span> <span class="n">MATCH_PARENT</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div>
+<p></li>
+<li><b>setContentView (int layoutResID)</b> - Set the activity content from a layout resource.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContentView</span><span class="o">(</span><span class="kt">int</span> <span class="n">layoutResID</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mContentParent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">installDecor</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">mContentParent</span><span class="o">.</span><span class="na">removeAllViews</span><span class="o">();</span>
+    <span class="o">}</span>     
+    <span class="n">mLayoutInflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">layoutResID</span><span class="o">,</span> <span class="n">mContentParent</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">Callback</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">getCallback</span><span class="o">();</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">cb</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isDestroyed</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">cb</span><span class="o">.</span><span class="na">onContentChanged</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p></li>
+<li><b>setContentView (View view, ViewGroup.LayoutParams params)</b> - Set the activity content to an explicit view with specified layout params.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContentView</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="k">if</span> <span class="o">(</span><span class="n">mContentParent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">installDecor</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+         <span class="n">mContentParent</span><span class="o">.</span><span class="na">removeAllViews</span><span class="o">();</span>
+    <span class="o">}</span>       
+    <span class="n">mContentParent</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">Callback</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">getCallback</span><span class="o">();</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">cb</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isDestroyed</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">cb</span><span class="o">.</span><span class="na">onContentChanged</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p></li>
+</ol></p>
+
+<p>The view provided as an argument in setContentView is placed directly into the view hierarchy of the activity. Regardless the layout params of the view, if not specified explicitly, the view layout params will change to MATCH_PARENT and fit the window of the activity (as we can see on the first option).</p>
+
+<p>If we look deeper into the code, we will see that when we call setContentView and we do not have already a DecorView, a DecorView will be installed an a layout will be generated. Otherwise all views under mContentParent (which is our FrameLayout with id/content) will be removed and our view/layout will be added or inflated to the view hierarchy of the activity under mContentParent.</p>
+
+<p>So, in our previous example if we do not explicitly ask to setContentView  we will get an empty screen with a view hierarchy as seen above. If we set our own simple_layout.xml through setContentView (a LinearLayout with a TextView), our layout will be rendered below the FrameLayout with id/content as you may see below:</p>
+
+<p><img src="/images/android/with_content.png"></p>
+
+<p></br>
+<h3>Adding an overlay view layout</h3></p>
+
+<p>So can we add or remove an overlay layout view in our Activity&#39;s window using content views? </p>
+
+<p><img src="/images/android/overlay_view.png"></p>
+
+<p>We will see that aside from setContentView options, there is another function called <b>addContentView</b> which allows us to set a layout on top of the layout we already added with setContentView. As we may see from the implementation in PhoneWindow.java of the function below:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addContentView</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mContentParent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">installDecor</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="n">mContentParent</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">Callback</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">getCallback</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">cb</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isDestroyed</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">cb</span><span class="o">.</span><span class="na">onContentChanged</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>the difference with setContentView is that it does not remove any previously added views to mContentParent. It just adds the new view as another child of mContentParent and in an order to be displayed above the previous layout added by setContentView. Having that said we can see below the visualized result of addContentView when trying to add an overlay view. </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+
+    <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_layout</span><span class="o">);</span>
+
+    <span class="n">OverlayLayout</span> <span class="n">overlayLayout</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">OverlayLayout</span><span class="o">(</span><span class="k">this</span><span class="o">);</span> <span class="c1">// our overlay view</span>
+
+    <span class="n">addContentView</span><span class="o">(</span><span class="n">overlayLayout</span><span class="o">,</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">,</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">));</span>   
+<span class="o">}</span>
+</code></pre></div>
+<p>As we may see OverlayLayout is another child of FrameLayout with id/content.</p>
+
+<p><img src="/images/android/overlay_hierarchy.png"></p>
+
+<p><img src="/images/android/with_overlay_content.png"></p>
+
+<p>Removing the overlay view can be as easy as:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">((</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">overlayLayout</span><span class="o">.</span><span class="na">getParent</span><span class="o">()).</span><span class="na">removeView</span><span class="o">(</span><span class="n">overlayLayout</span><span class="o">);</span>
+</code></pre></div>
+<p>With this code we just get the overlay’s parent and we request to remove the view.</p>
+
+<p>If we do not have reference to the view we can use tag mechanisms to assign and locate the view later on and follow the same approach as above.</p>
+
+<p>Adding overlays on activities with addContentView is an exceptional way to add overlays to activities since it inherits all the characteristics and behaviour/state from activity&#39;s window and there is no need for special handling of different cases like orientation issues, special flags and others. We will dive further into the benefits of this approach in comparison with other options as we move on to this series of articles regarding creating overlays.  </p>
+
+        
+        </section>
+       
+ 
+ <div class="share-page">
+    <a href="https://twitter.com/intent/tweet?text=Working with overlays - PhoneWindow, a not-so-famous window&url=http://vourkosa.github.io/android/2016/02/06/Working-with-overlays-PhoneWindow,-a-not-so-famous-window.html&via=vourkosa&related=vourkosa" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    &nbsp;&nbsp;<a href="https://facebook.com/sharer.php?u=http://vourkosa.github.io/android/2016/02/06/Working-with-overlays-PhoneWindow,-a-not-so-famous-window.html" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    &nbsp;&nbsp;<a href=" http://www.linkedin.com/shareArticle?mini=true&url=http://vourkosa.github.io/android/2016/02/06/Working-with-overlays-PhoneWindow,-a-not-so-famous-window.html&title=Working with overlays - PhoneWindow, a not-so-famous window&source=" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    &nbsp;&nbsp;<a href="https://plus.google.com/share?url=http://vourkosa.github.io/android/2016/02/06/Working-with-overlays-PhoneWindow,-a-not-so-famous-window.html" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
+    &nbsp;&nbsp;<a href="http://www.reddit.com/submit?url=http://vourkosa.github.io/android/2016/02/06/Working-with-overlays-PhoneWindow,-a-not-so-famous-window.html" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
+
+
+
+</div>
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'vourkosa'; // required: replace example with your forum shortname
+    	var disqus_developer = 1; // Comment out when the site is live
+        var disqus_identifier = "/android/2016/02/06/Working-with-overlays-PhoneWindow,-a-not-so-famous-window.html";
+//s.src = '//vourkosa.disqus.com/embed.js';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        <footer>
+        <div class="foot">
+            
+            <a href="/android/2016/01/15/Working-with-overlays.html" class="button special2">Previous</a> 
+            
+        </footer>
+  </div>
+    </div>
+
+</section>
+
+
+            </div>
+            <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>&copy; Andreas Vourkos 2016. All rights reserved.</li>
+                <li>A Jekyll Theme by: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+		</div>
+	</body>
+</html>

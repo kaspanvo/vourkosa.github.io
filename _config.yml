@@ -17,7 +17,6 @@ markdown: kramdown
 redcarpet:
     extension:
         - fenced_code_blocks
-highlighter: pygments
 comments:
     provider: disqus
 disqus: 

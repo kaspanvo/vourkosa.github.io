@@ -13,7 +13,7 @@ gems:
 paginate: 4
 paginate_path: "page:num"
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
     extension:
         - fenced_code_blocks

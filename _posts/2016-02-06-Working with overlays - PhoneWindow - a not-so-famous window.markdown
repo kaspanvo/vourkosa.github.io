@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Working with overlays - PhoneWindow, a not-so-famous window
-date:  2016-02-06 10:15:20
+date:  2016-02-06 10:16:20
 categories: Android 
 tag: android
 comments: true
@@ -114,8 +114,8 @@ We can easily identify here that DecorView does not have a single LinearLayout a
 Usually in onCreate(Bundle) function of an Activity, users are advised to use <a href="http://developer.android.com/reference/android/app/Activity.html#setContentView(android.view.View)" target="_blank">setContentView</a> to set an Activity’s content to a specific view layout. This view can either be inflated from a specific resource or through a programmatically created view.
 
 <u>There are 3 options on how to set ContentView:</u>
-<ol>
-<li><b>setContentView (View view)</b> - Set the activity content to an explicit view.
+
+<b>1. setContentView (View view)</b> - Set the activity content to an explicit view.
 
 ```java
 @Override
@@ -124,8 +124,7 @@ public void setContentView(View view) {
 }
 ```
 
-</li>
-<li><b>setContentView (int layoutResID)</b> - Set the activity content from a layout resource.
+<b>2 .setContentView (int layoutResID)</b> - Set the activity content from a layout resource.
 
 ```java
 @Override
@@ -143,9 +142,7 @@ public void setContentView(int layoutResID) {
 	}
 }
 ```
-
-</li>
-<li><b>setContentView (View view, ViewGroup.LayoutParams params)</b> - Set the activity content to an explicit view with specified layout params.
+<b>3. setContentView (View view, ViewGroup.LayoutParams params)</b> - Set the activity content to an explicit view with specified layout params.
 
 ```java	
 @Override
@@ -163,10 +160,6 @@ public void setContentView(View view, ViewGroup.LayoutParams params) {
 	}
 }
 ```
-
-</li>
-</ol>
-
 
 The view provided as an argument in setContentView is placed directly into the view hierarchy of the activity. Regardless the layout params of the view, if not specified explicitly, the view layout params will change to MATCH_PARENT and fit the window of the activity (as we can see on the first option).
 

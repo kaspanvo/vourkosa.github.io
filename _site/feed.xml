@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.1">Jekyll</generator>
 <link href="http://vourkosa.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://vourkosa.github.io/" rel="alternate" type="text/html" />
-<updated>2016-03-17T13:48:31+02:00</updated>
+<updated>2016-03-17T15:02:05+02:00</updated>
 <id>http://vourkosa.github.io/</id>
 <subtitle>This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
 </subtitle>
@@ -13,7 +13,9 @@
 <published>2016-03-17T13:22:12+02:00</published>
 <updated>2016-03-17T13:22:12+02:00</updated>
 <id>http://vourkosa.github.io/monetization/2016/03/17/Making-an-app-survive-in-Android-ocean</id>
-<content type="html" xml:base="http://vourkosa.github.io/monetization/2016/03/17/Making-an-app-survive-in-Android-ocean.html">&lt;p&gt;As apps’ visibility becomes more and more difficult, app developers are working hard to make their apps stand out among thousands of new apps appearing every day. There is a big variety of articles out there on how to increase an app’s discoverability through ASO techniques, marketing campaigns and others.  What is most important, though? Spend on ad marketing campaigns? Creating press releases, or dive into Google Play mechanisms to understand and position better an app on store? Anyone could argue that app developers should be doing all of that anyway…this is so true, but where should be their main focus?&lt;/p&gt;
+<content type="html" xml:base="http://vourkosa.github.io/monetization/2016/03/17/Making-an-app-survive-in-Android-ocean.html">&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/google_vest.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As apps’ visibility becomes more and more difficult, app developers are working hard to make their apps stand out among thousands of new apps appearing every day. There is a big variety of articles out there on how to increase an app’s discoverability through ASO techniques, marketing campaigns and others.  What is most important, though? Spend on ad marketing campaigns? Creating press releases, or dive into Google Play mechanisms to understand and position better an app on store? Anyone could argue that app developers should be doing all of that anyway…this is so true, but where should be their main focus?&lt;/p&gt;
 
 &lt;p&gt;By using a &lt;a href=&quot;http://www.pollfish.com&quot; target=&quot;_blank&quot;&gt;Pollfish&lt;/a&gt;, a tool that allows direct interaction and gathering of feedback from thousands of mobile app users instantly, the main challenge was to find and ask the right questions: How do you discover apps that you download? What are the most important things that you check before downloading an app?&lt;/p&gt;
 
@@ -119,7 +121,7 @@
 
 </content>
 <category term="monetization" />
-<summary>As apps’ visibility becomes more and more difficult, app developers are working hard to make their apps stand out among thousands of new apps appearing every day. There is a big variety of articles out there on how to increase an app’s discoverability through ASO techniques, marketing campaigns and others.  What is most important, though? Spend on ad marketing campaigns? Creating press releases, or dive into Google Play mechanisms to understand and position better an app on store? Anyone could argue that app developers should be doing all of that anyway…this is so true, but where should be their main focus?</summary>
+<summary></summary>
 </entry>
 <entry>
 <title>Working with overlays - PhoneWindow, a not-so-famous window</title>

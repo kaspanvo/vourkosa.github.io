@@ -7,6 +7,8 @@ tag: monetization
 comments: true
 ---
 
+<img src="{{ site.baseurl }}/images/monetization/google_vest.png">
+
 As apps’ visibility becomes more and more difficult, app developers are working hard to make their apps stand out among thousands of new apps appearing every day. There is a big variety of articles out there on how to increase an app’s discoverability through ASO techniques, marketing campaigns and others.  What is most important, though? Spend on ad marketing campaigns? Creating press releases, or dive into Google Play mechanisms to understand and position better an app on store? Anyone could argue that app developers should be doing all of that anyway…this is so true, but where should be their main focus?
 
 By using a <a href="http://www.pollfish.com" target="_blank">Pollfish</a>, a tool that allows direct interaction and gathering of feedback from thousands of mobile app users instantly, the main challenge was to find and ask the right questions: How do you discover apps that you download? What are the most important things that you check before downloading an app? 

@@ -237,7 +237,7 @@ if (decor != null) {
 
 <h4>4) Creating parent RelativeLayout</h4>
 
-We create a parent Relative Layout which will be the new parent/root of the Activity’s view hierarchy.
+We create a parent RelativeLayout which will be the new parent/root of the Activity’s view hierarchy.
 
 ```java
 RelativeLayout ourRelativeLayout = new RelativeLayout(act);
@@ -265,7 +265,7 @@ ourRelativeLayout.addView(originalView, new RelativeLayout.LayoutParams(Relative
 
 <h4>7) Adding our parent RelativeLayout to DecorView</h4>
 
-If this is the first time we re-arrange the views we just add our RelativeLayout to the parent view, otherwise we find the current position of the child view in the tree and we use it in order to add our RelativeLayout in the appropriate order in the tree:
+If this is the first time we re-arrange the views we just add our RelativeLayout to the parent view, otherwise we find use the original position of DecorView's child view in the tree and we use it in order to add our RelativeLayout in the appropriate index/order in the tree:
 
 ```java
 RelativeLayout.LayoutParams rootParam = new RelativeLayout.LayoutParams(
@@ -276,7 +276,7 @@ parent.addView(ourRelativeLayout, rootParam);
 
 ```
 
-or (if this is nto the first time we re-arrange)
+or (if this is not the first time we re-arrange)
 
 ```java
 parent.addView(ourRelativeLayout, indexOfParentInInitialHierarchy, rootParam); 
@@ -284,7 +284,7 @@ parent.addView(ourRelativeLayout, indexOfParentInInitialHierarchy, rootParam);
 
 <h4>8) Adding our OverlayLayout to parent RelativeLayout</h4>
 
-We then add our overlay layout to our parent RelativeLayout and we are ready! OverlayLayout will be placed on top of the content of the original DecorView's child as explained in the introduction of this article.
+We then add our OverlayLayout to our parent RelativeLayout and we are ready! OverlayLayout will be placed on top of the content of the original DecorView's child as explained in the introduction of this article.
 
 ```java
 RelativeLayout.LayoutParams overlayParam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -302,7 +302,7 @@ Following this approach, several corner cases can occur that will need special h
 
 <h3>Conclusion</h3>
 
-To conclude, messing around with the view hierarchy of an Activity on the DecorView level is wrong. There so many things that can go bad. Params inherited by child view layouts or flags that affect the structure of the view tree can easily go away when you brake the consistency of the structured view tree. During the last 2 years we had to identify, track and solve such issues in an agnostic environment.
+To conclude, messing around with the view hierarchy of an Activity on the DecorView level is wrong. There so many things that can go bad. Parameters inherited by child view layouts or flags that affect the structure of the view tree can easily go away when you brake the consistency of the structured view tree. During the last 2 years we had to identify, track and solve such issues in an agnostic environment.
 
 I will try to find some time later on this week to publish an open source example of this implementation in order for anyone interested to look into this further.
 

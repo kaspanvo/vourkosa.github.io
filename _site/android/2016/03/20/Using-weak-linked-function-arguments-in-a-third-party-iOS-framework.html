@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html>
+    
+	<head>
+		<title>Personal blog around mobile monetization, android and ios development</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Personal blog around mobile monetization, Android and iOS development and other things learned while developing mobile apps for both platforms." />
+		<meta name="keywords" content="android,monetization" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.scrollzer.min.js"></script>
+		<script src="/js/jquery.scrolly.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73073179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+		
+    <body>
+        <div id="wrapper">
+        <!-- Header -->
+    <section id="header" class="skel-layers-fixed">
+        <header>
+            <span class="image avatar"><img src="/images/avatar.png" alt="" /></span>
+            <h1 id="logo"><a href="/">Andreas Vourkos</a></h1>
+              <p>Building mobile apps since the early days of J2ME...</p>
+            <span class="image pollfish"><a href="https://www.pollfish.com" target="_blank"> <img  src="/images/polfish.png" alt="" /></a></span>
+          <p>The mobile engineer behind <a href="https://www.pollfish.com" target="_blank">Pollfish</a> Android and iOS SDKs</p>
+
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/android">Android Development</a></li>
+                         <li><a href="/ios">iOS Development</a></li>
+                <li><a href="/monetization">Monetization Tips</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <ul class="icons">
+                 <li><a href="https://twitter.com/vourkosa" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.linkedin.com/in/andreasvourkos" class="icon fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+                <li><a href="https://github.com/vourkosa" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+            <!-- Main -->
+            <div id="main">
+                <section>
+ 
+    <div class="container">
+    
+        <header class="major">
+            <h2>Working with overlays - Giving birth to a new DecorView child</h2>
+                <p class="post-meta">20 March 2016&nbsp;&nbsp; | &nbsp;&nbsp; Android    </p>  
+        </header>
+
+        <section class="post-content">
+            <p>Following up the series of previous articles on how to create overlays on Android we will study in this post how to add an overlay over an Activity. We will do that by traversing it’s current view hierarchy and injecting directly a RelativeLayout below window’s DecorView. This RelativeLayout will hold the overlay layout, along with the original layout of the Activity that is already in place.</p>
+
+<h3>The Basics</h3>
+
+<p>A simple way to add an overlay to a layout is to have a FrameLayout or a RelativeLayout as a parent, and then place the overlay view as a new child in the appropriate z-order in order to be on top of the current layout. Both FrameLayout and RelativeLayout can support this approach. FrameLayout is designed to hold a stack of child views with the most recent placed on top while RelativeLayout can be used to position child views either relative to each other, or to the screen boundaries. If two or more child views are relative to the same thing, they are placed in a stack structure with the most recent on top, similar to FrameLayout approach.</p>
+
+<p>The exact same concept is followed by Android framework with DecorView (which is a FrameLayout) and the child view marked with id/content (which is also a FrameLayout) that usually holds the view hierarchy of the content of the Activity.</p>
+
+<p>Now let’s see a quick example in order to understand better. We have a simple Activity with a RelativeLayout as a content view that holds a button aligned at the bottom.</p>
+
+<p>activity_rel.xml</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">"1.0"</span> <span class="n">encoding</span><span class="o">=</span><span class="s">"utf-8"</span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="n">RelativeLayout</span> <span class="nl">xmlns:</span><span class="n">android</span><span class="o">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">"@+id/topRelLay"</span>
+    <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"match_parent"</span>
+    <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"match_parent"</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">Button</span>
+        <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">"@+id/changeOrderBtn"</span>
+        <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"wrap_content"</span>
+        <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"wrap_content"</span>
+        <span class="nl">android:</span><span class="n">layout_alignParentBottom</span><span class="o">=</span><span class="s">"true"</span>
+        <span class="nl">android:</span><span class="n">layout_centerHorizontal</span><span class="o">=</span><span class="s">"true"</span>
+        <span class="nl">android:</span><span class="n">layout_marginBottom</span><span class="o">=</span><span class="s">"30dp"</span>
+        <span class="nl">android:</span><span class="n">text</span><span class="o">=</span><span class="s">"Change Order"</span>
+        <span class="nl">android:</span><span class="n">textSize</span><span class="o">=</span><span class="s">"20sp"</span>
+        <span class="nl">android:</span><span class="n">textStyle</span><span class="o">=</span><span class="s">"bold"</span> <span class="o">/&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">RelativeLayout</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p>we go then and add programmatically 3 TextViews as child views to this RelativeLayout. These views are placed by default relative to the top left corner and we add some margins to them in order to demonstrate them better. The child view that is added last in RelativeLayout, is rendered on top.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">RelativeLayout</span> <span class="n">topRelLayout</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Button</span> <span class="n">changeOrderBtn</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_rel</span><span class="o">);</span>
+
+        <span class="n">topRelLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">RelativeLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">topRelLay</span><span class="o">);</span>
+        <span class="n">changeOrderBtn</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">changeOrderBtn</span><span class="o">);</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+            <span class="n">TextView</span> <span class="n">textView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextView</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+            <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">layoutParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="mi">400</span><span class="o">,</span> <span class="mi">600</span><span class="o">);</span>
+
+            <span class="n">textView</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="c1">// to track view later on HierarchyViewer</span>
+            <span class="n">textView</span><span class="o">.</span><span class="na">setGravity</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">CENTER</span><span class="o">);</span>
+            <span class="n">textView</span><span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">randomColor</span><span class="o">());</span>
+            <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"View "</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+            <span class="n">textView</span><span class="o">.</span><span class="na">setTypeface</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">Typeface</span><span class="o">.</span><span class="na">BOLD</span><span class="o">);</span>
+            <span class="n">layoutParams</span><span class="o">.</span><span class="na">setMargins</span><span class="o">(</span><span class="mi">50</span> <span class="o">*</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">),</span> <span class="mi">50</span> <span class="o">*</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">),</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+
+            <span class="n">topRelLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">textView</span><span class="o">,</span> <span class="n">layoutParams</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">changeOrderBtn</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ViewGroup</span> <span class="n">myViewGroup</span> <span class="o">=</span> <span class="o">((</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">v</span><span class="o">.</span><span class="na">getParent</span><span class="o">());</span>
+                <span class="n">myViewGroup</span><span class="o">.</span><span class="na">bringChildToFront</span><span class="o">(</span><span class="n">myViewGroup</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>We then use on every click of the button, <a href="http://developer.android.com/reference/android/view/View.html#bringToFront()" target="_blank">bringToFront()</a> or <a href="http://developer.android.com/reference/android/view/ViewGroup.html#bringChildToFront(android.view.View)" target="_blank">bringChildToFront()</a> functions in order to change the order of these child views in the tree and bring the view rendered at the bottom of our view stack (position 1 in ViewGroup since position 0 is reserved by our button), to the top (position 3 in ViewGroup).</p>
+
+<p><img src="/images/android/changeorder.gif" align="center" style="width: 200px; margin: 0 auto;" /></p>
+
+<p>If we have a closer look in gif below we will see that each time we call bringChildToFront() to re-arrange views, child views’ order changes also in Hierarchy Viewer.</p>
+
+<p><img src="/images/android/view_hier.gif" /></p>
+
+<h3>So let’s do it! Wait, but…why??</h3>
+
+<p>As we have seen above, if we have a RelativeLayout or a FrameLayout as a parent to our layout we can easily add a new overlay view on top of that. However if you are working in an agnostic environment, like for example through a third-party library you never know what type of layout is the parent of layouts in the app using that library. Moreover with the vast amount of libraries out there you will also meet many cases where the expected view hierarchy is altered and you cannot be 100% on what is the structure of the view tree you will have to deal with. Having that said, the only way to re-assure that you have full control on the tree view is to be the first one to have a RelativeLayout or a FrameLayout  injected directly under DecorView. This way, the app’s Activity, using your library, will always have a RelativeLayout as the parent of all in Activity’s view hierarchy and then any view can be placed on top of everything.</p>
+
+<p>Someone would argue that this is a really bad approach since you are interfering with the provided hierarchy of the framework. This is so true.. I remember last November discussing this with Adam Powel from Android team at Android Dev Summit in San Francisco. His reaction when I was describing how we were traversing the view hierarchy of an app and how we were injecting an overlay as a new DecorView child was stunning. Long story short, he was just saying “no, no, no you shouldn’t do that!!”.  Messing up with the provided view hierarchy of an app, can reveal several issues, that’s also true. However, at <a href="http://www.pollfish.com" target="_blank">Pollfish</a> we had been successfully following this approach for more than 2 years, injecting overlay layouts under DecorView in thousands of mobile apps on more than 200m mobile devices out there. During that period we had to resolve a lot of corner cases in order to have a robust solution, until we moved on to a new approach.</p>
+
+<p>Below we can see the view hierarchy of Android Studio’s default empty activity template project running on a Nexus 5 before and after re-arranging the hierarchy to add a new DecorView child</p>
+
+<p><b>Before:</b></p>
+
+<p><img src="/images/android/before2.png" /></p>
+
+<p><b>After:</b></p>
+
+<p><img src="/images/android/after4.png" /></p>
+
+<h3>The flow</h3>
+
+<p>Here we will list the necessary steps involved, when initializing a third party library, an SDK, through an Activity and trying to inject a RelativeLayout as a new DecorView child in order to later on, add an OverlayLayout on top of current Activity’s layout.</p>
+
+<h4>1) Check if OverlayLayout already exists in view hierarchy</h4>
+
+<p>During the first step, we try to see if we have already injected an OverlayLayout to our Activity’s view hierarchy, and if yes get a reference to it. We need to do this step since our library may get initialized several times during an Activity’s lifecycle. This way we can ensure that no more than one overlays will be placed to the Activity.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewGroup</span> <span class="n">decor</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">activity</span><span class="o">.</span><span class="na">getWindow</span><span class="o">().</span><span class="na">getDecorView</span><span class="o">();</span>
+<span class="n">OverlayLayout</span> <span class="n">overlayLayout</span> <span class="o">=</span> <span class="n">getExistingOverlayInView</span><span class="o">(</span><span class="n">decor</span><span class="o">);</span> 
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="n">OverlayLayout</span> <span class="nf">getExistingOverlayInView</span><span class="p">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">){</span>
+
+ <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">parent</span><span class="o">.</span><span class="na">getChildCount</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+    <span class="n">View</span> <span class="n">child</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">child</span> <span class="k">instanceof</span> <span class="n">OverlayLayout</span><span class="o">)</span>
+	  <span class="k">return</span> <span class="o">(</span><span class="n">OverlayLayout</span><span class="o">)</span> <span class="n">child</span><span class="o">;</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">child</span> <span class="k">instanceof</span> <span class="n">ViewGroup</span><span class="o">)</span> <span class="o">{</span>
+
+	  <span class="n">View</span> <span class="n">v</span> <span class="o">=</span> <span class="n">getExistingOverlayInView</span><span class="o">((</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">child</span><span class="o">);</span>
+
+	  <span class="k">if</span> <span class="o">(</span><span class="n">v</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+	    <span class="k">return</span> <span class="o">(</span><span class="n">OverlayLayout</span><span class="o">)</span> <span class="n">v</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span> 
+  <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h4>2) Remove OverlayLayout (if found) and restore to Activity's initial view hierarchy</h4>
+
+<p>If OverlayLayout was found in view hierarchy we try to remove it and restore view tree of the Activity, to it’s initial state.</p>
+
+<p>We initially get reference to the parent of the retrieved OverlayLayout. This parent should be our injected RelativeLayout.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewGroup</span> <span class="n">ourRelativeLayout</span><span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">overlayLayout</span><span class="o">.</span><span class="na">getParent</span><span class="o">();</span> 
+</code></pre>
+</div>
+
+<p>Then we get reference to the parent of our injected RelativeLayout which should be the initial parent of our Activity’s view hierarchy and in particular our DecorView.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewGroup</span> <span class="n">parentRelativeLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">getParent</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>We remove then our own RelativeLayout (ourRelativeLayout) from parentRelativeLayout and then we try to get reference to the initial child of DecorView (which we have tagged with a specific tag prior changing view hierarchy)</p>
+
+<p>Once we get reference to our initial child view we remove all views from our RelativeLayout and add back the original view to its initial parent (at the specific child position that we kept reference when we removed it). After that, we remove our RelativeLayout from our DecorView and voilà, our app is back to its initial view state.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">bringAppViewsToPriorOverlayState</span><span class="p">(</span><span class="n">OverlayLayout</span> <span class="n">overlayLayout</span><span class="o">){</span>
+
+<span class="n">ViewGroup</span> <span class="n">ourRelativeLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">overlayLayout</span><span class="o">.</span><span class="na">getParent</span><span class="o">();</span>
+
+  <span class="k">if</span> <span class="o">(</span><span class="n">ourRelativeLayout</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+
+	<span class="n">ViewGroup</span> <span class="n">parentRelativeLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">getParent</span><span class="o">();</span>
+					
+	<span class="k">if</span> <span class="o">(</span><span class="n">parentRelativeLayout</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+
+		<span class="n">parentRelativeLayout</span><span class="o">.</span><span class="na">removeView</span><span class="o">(</span><span class="n">ourRelativeLayout</span><span class="o">);</span>
+
+		<span class="k">if</span> <span class="o">(</span><span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">getChildCount</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// our RelativeLayout should hold both OverlayLayout &amp; initial DevorView child</span>
+
+			<span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">removeView</span><span class="o">(</span><span class="n">overlayLayout</span><span class="o">);</span>
+
+			<span class="n">View</span> <span class="n">originalView</span> <span class="o">=</span> <span class="o">(</span><span class="n">View</span><span class="o">)</span> <span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">findViewWithTag</span><span class="o">(</span><span class="s">"ORIGINAL_VIEW_TAG"</span><span class="o">);</span>
+
+			<span class="k">if</span> <span class="o">(</span><span class="n">originalView</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+
+				<span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span><span class="s">"Found previous original app's view - reordering view tree"</span><span class="o">);</span>
+										
+				<span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">removeAllViews</span><span class="o">();</span>				
+				<span class="n">parentRelativeLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">originalView</span><span class="o">,</span> <span class="n">OverlayLayout</span><span class="o">.</span><span class="na">getIndexOfParentInInitialHierarchy</span><span class="o">());</span>
+				<span class="n">parentRelativeLayout</span><span class="o">.</span><span class="na">removeView</span><span class="o">(</span><span class="n">ourRelativeLayout</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h4>3) Getting reference to the child of DecorView which holds the Activity’s view hierarchy</h4>
+
+<p>As we have discussed in previous article, since Android Lollipop DecorView has more than one child (navigation bar and status bar backgrounds). Having that said we need to find the child that holds the Activity’s view hierarchy. This child usually lies at:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="o">(</span><span class="n">View</span><span class="o">)</span> <span class="n">decor</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p>However, since other libs or even the app developer can interfere with DecorView in an agnostic environment we need to follow a different approach to get reference to the appropriate child. We use a loop looking for a child of DecorView which is an instance of a ViewGroup. Obviously this is a solution that can easily break in future releases of Android or even if someone else had played around with DecorView. If no child is found, we fall back and get reference at child view at position 0.  It is important here to keep a reference to the position of the referenced child below DecorView. We will need that (Step 2), if we try to restore the view hierarchy to its initial state, prior injecting our overlay view. Have in mind that changing the order of the child of DecorView can mess up the whole Activity’s layout structure.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewGroup</span> <span class="n">decor</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">act</span><span class="o">.</span><span class="na">getWindow</span><span class="o">().</span><span class="na">getDecorView</span><span class="o">();</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">decor</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+  
+   <span class="n">View</span> <span class="n">originalView</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">decor</span><span class="o">.</span><span class="na">getChildCount</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+      <span class="k">if</span> <span class="o">(</span><span class="n">decor</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="k">instanceof</span> <span class="n">ViewGroup</span><span class="o">)</span> <span class="o">{</span>
+
+         <span class="n">originalView</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">decor</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+         <span class="n">OverlayLayout</span><span class="o">.</span><span class="na">setIndexOfParentInInitialHierarchy</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="c1">// (used in step 2)</span>
+
+         <span class="k">break</span><span class="o">;</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+
+  <span class="k">if</span> <span class="o">(</span><span class="n">originalView</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>			
+    <span class="n">originalView</span> <span class="o">=</span> <span class="o">(</span><span class="n">View</span><span class="o">)</span> <span class="n">decor</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+  <span class="o">}</span>
+ 
+  <span class="n">originalView</span><span class="o">.</span><span class="na">setTag</span><span class="o">(</span><span class="s">"ORIGINAL_VIEW_TAG"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h4>4) Creating parent RelativeLayout</h4>
+
+<p>We create a parent RelativeLayout which will be the new parent/root of the Activity’s view hierarchy.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">RelativeLayout</span> <span class="n">ourRelativeLayout</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">(</span><span class="n">act</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h4>5) Removing DecorView's child view from parent</h4>
+
+<p>We initially remove the original DecorView’s child from its parent</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewGroup</span> <span class="n">parent</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">originalView</span><span class="o">.</span><span class="na">getParent</span><span class="o">();</span> <span class="c1">// in default solution this is our DecorView</span>
+
+<span class="n">parent</span><span class="o">.</span><span class="na">removeView</span><span class="o">(</span><span class="n">originalView</span><span class="o">);</span>
+
+</code></pre>
+</div>
+
+<h4>6) Adding the original DecorView child view to our parent RelativeLayout</h4>
+
+<p>We add back the original DecorView child view to our RelativeLayout which will be the parent of all.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">originalView</span><span class="o">,</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">,</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">));</span> 
+</code></pre>
+</div>
+
+<h4>7) Adding our parent RelativeLayout to DecorView</h4>
+
+<p>If this is the first time we re-arrange the views we just add our RelativeLayout to the parent view, otherwise we find use the original position of DecorView’s child view in the tree and we use it in order to add our RelativeLayout in the appropriate index/order in the tree:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">rootParam</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span>
+                     <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">,</span>
+                     <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">);</span>
+
+<span class="n">parent</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">ourRelativeLayout</span><span class="o">,</span> <span class="n">rootParam</span><span class="o">);</span>
+
+</code></pre>
+</div>
+
+<p>or (if this is not the first time we re-arrange)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">parent</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">ourRelativeLayout</span><span class="o">,</span> <span class="n">indexOfParentInInitialHierarchy</span><span class="o">,</span> <span class="n">rootParam</span><span class="o">);</span> 
+</code></pre>
+</div>
+
+<h4>8) Adding our OverlayLayout to parent RelativeLayout</h4>
+
+<p>We then add our OverlayLayout to our parent RelativeLayout and we are ready! OverlayLayout will be placed on top of the content of the original DecorView’s child as explained in the introduction of this article.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">overlayParam</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">,</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">MATCH_PARENT</span><span class="o">);</span>
+<span class="n">overlayParam</span><span class="o">.</span><span class="na">addRule</span><span class="o">(</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">ALIGN_PARENT_BOTTOM</span><span class="o">);</span>  					
+
+<span class="c1">// create our overlay layout				</span>
+<span class="n">OverlayLayout</span> <span class="n">overlayLayout</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OverlayLayout</span><span class="o">(</span><span class="n">act</span><span class="o">);</span>
+
+<span class="n">ourRelativeLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">overlayLayout</span><span class="o">,</span> <span class="n">overlayParam</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h3>Corner cases</h3>
+
+<p>Following this approach, several corner cases can occur that will need special handling. This is due to fragmentation of Android and the agnostic environment that the code runs. Flags applied to Activity’s window, soft input events or orientation changes can really mess up this solution so you should act proactively. Moreover, status and navigation bars as appearing on different devices and versions of the framework can deliver wrong heights for the actual visible part of the screen and this solution can end up in a real bad visual result and a broken view hierarchy.</p>
+
+<h3>Conclusion</h3>
+
+<p>To conclude, messing around with the view hierarchy of an Activity on the DecorView level is wrong. There so many things that can go bad. Parameters inherited by child view layouts or flags that affect the structure of the view tree can easily go away when you brake the consistency of the structured view tree. During the last 2 years we had to identify, track and solve such issues in an agnostic environment.</p>
+
+<p>I will try to find some time later on this week to publish an open source example of this implementation in order for anyone interested to look into this further.</p>
+
+
+        
+        </section>
+       
+ 
+ <div class="share-page">
+    <a href="https://twitter.com/intent/tweet?text=Working with overlays - Giving birth to a new DecorView child&url=http://vourkosa.github.io/android/2016/03/20/Using-weak-linked-function-arguments-in-a-third-party-iOS-framework.html&via=vourkosa&related=vourkosa" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    &nbsp;&nbsp;<a href="https://facebook.com/sharer.php?u=http://vourkosa.github.io/android/2016/03/20/Using-weak-linked-function-arguments-in-a-third-party-iOS-framework.html" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    &nbsp;&nbsp;<a href=" http://www.linkedin.com/shareArticle?mini=true&url=http://vourkosa.github.io/android/2016/03/20/Using-weak-linked-function-arguments-in-a-third-party-iOS-framework.html&title=Working with overlays - Giving birth to a new DecorView child&source=" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    &nbsp;&nbsp;<a href="https://plus.google.com/share?url=http://vourkosa.github.io/android/2016/03/20/Using-weak-linked-function-arguments-in-a-third-party-iOS-framework.html" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
+    &nbsp;&nbsp;<a href="http://www.reddit.com/submit?url=http://vourkosa.github.io/android/2016/03/20/Using-weak-linked-function-arguments-in-a-third-party-iOS-framework.html" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
+
+
+
+</div>
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'vourkosa'; // required: replace example with your forum shortname
+    	var disqus_developer = 1; // Comment out when the site is live
+        var disqus_identifier = "/android/2016/03/20/Using-weak-linked-function-arguments-in-a-third-party-iOS-framework.html";
+//s.src = '//vourkosa.disqus.com/embed.js';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        <footer>
+        <div class="foot">
+            
+            <a href="/android/2016/03/20/Working-with-overlays-Giving-birth-to-a-new-DecorView-child.html" class="button special2">Previous</a> 
+            
+        </footer>
+  </div>
+    </div>
+
+</section>
+
+
+            </div>
+            <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>&copy; Andreas Vourkos 2016. All rights reserved.</li>
+                <li>A Jekyll Theme by: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+		</div>
+	</body>
+</html>

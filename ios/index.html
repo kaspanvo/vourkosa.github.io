@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<section >
+    <div class="container">
+      {% for post in  site.tags['ios'] %}
+            <article>
+                      <header>
+                    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                    <h5>{{ post.date | date: "%-d %B %Y" }}&nbsp;&nbsp;| &nbsp;&nbsp;{{ post.categories | join: ', ' }}</h5>
+                </header>
+                <section class="post-content">
+                     </br>
+                    {{ post.content | truncatewords: 100 }}
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="{{ site.baseurl }}{{ post.url }}" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </article>
+        {% endfor %}
+    </div>
+
+</section>
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}"  class="button special2">Previous</a>
+  {% else %}
+    
+  {% endif %}
+  <span class="page_number "> <!--{{ paginator.page }} / {{ paginator.total_pages }} --></span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="button special2">Next</a>
+  {% else %}
+
+  {% endif %}
+</div>
+</section>
+
+<!--<section>
+    <div class="container">
+        <div class="features">
+        {% for post in site.posts offset:1 %}
+            <article>
+                <section class="excerpt">
+                <header>
+                    <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                </header>
+                
+                    {{ post.content | truncatewords: 30 }}
+                </section>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="{{ site.baseurl }}{{ post.url }}" class="button">Read More</a></li>
+                    </ul>
+                </footer>
+                <div class="clear"></div>
+            </article>
+        {% endfor %}
+        </div>
+    </div>
+</section>-->

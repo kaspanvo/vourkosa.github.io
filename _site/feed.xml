@@ -3,17 +3,140 @@
 <generator uri="http://jekyllrb.com" version="3.0.1">Jekyll</generator>
 <link href="http://vourkosa.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://vourkosa.github.io/" rel="alternate" type="text/html" />
-<updated>2016-03-20T19:22:04+02:00</updated>
+<updated>2016-04-01T16:45:58+03:00</updated>
 <id>http://vourkosa.github.io/</id>
 <subtitle>This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
 </subtitle>
 <entry>
+<title>How To Monetize Your Mobile App Using In-App Surveys</title>
+<link href="http://vourkosa.github.io/monetization/2016/03/31/How-To-Monetize-Your-Mobile-App-Using-In-App-Surveys.html" rel="alternate" type="text/html" title="How To Monetize Your Mobile App Using In-App Surveys" />
+<published>2016-03-31T16:22:11+03:00</published>
+<updated>2016-03-31T16:22:11+03:00</updated>
+<id>http://vourkosa.github.io/monetization/2016/03/31/How To Monetize Your Mobile App Using In-App Surveys</id>
+<content type="html" xml:base="http://vourkosa.github.io/monetization/2016/03/31/How-To-Monetize-Your-Mobile-App-Using-In-App-Surveys.html">&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/surv.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mobile monetization is one of the key issues app developers face in today’s mobile world. As apps’ visibility become more and more hard, developers are looking for new effective ways to monetize their apps through different monetization strategies.&lt;/p&gt;
+
+&lt;p&gt;One of the most widely used strategies is monetization through ads and as Steve Jobs said once, “Mobile Ads suck”. Unfortunately this is &lt;a href=&quot;http://www.mediapost.com/publications/article/245690/yep-mobile-ads-suck-coke-kraft-papa-johns-kn.html&quot; target=&quot;_blank&quot;&gt;widely accepted&lt;/a&gt; by big brands as true. Different ad platforms are suggesting several units such as banner ads, interstitials, video ads, offer walls and others. Developers are usually confused on what ad units to use or from which ad platform, but what they really care at the end of the day is to make money out of their app without loosing their users by compromising user experience.&lt;/p&gt;
+
+&lt;p&gt;As seen in a &lt;a href=&quot;https://www.pollfish.com/infographic/developer&quot; target=&quot;_blank&quot;&gt;survey&lt;/a&gt; of 5,000 mobile users by &lt;a href=&quot;https://www.pollfish.com&quot; target=&quot;_blank&quot;&gt;Pollfish&lt;/a&gt;, people are generally annoyed by the current different ad formats that overwhelm an apps’ user interface, sometimes placed in a way to force users to click on them. Most of current ad units engage user with the ad taking him away from the app rather than keeping him engaged with the content of the app.&lt;/p&gt;
+
+&lt;p&gt;The market would be served well by a new interactive monetization format that can revolutionise the way mobile developers make money out of apps at the moment and introduce something more appealing for both developers and app users.&lt;/p&gt;
+
+&lt;h3&gt;Introducing monetization with surveys&lt;/h3&gt;
+
+&lt;p&gt;Monetization with surveys is one of the new innovations in the mobile app monetization landscape.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;How does it work?&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/diy.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At Pollfish we provide a DIY survey tool on our website that anyone can quickly sign up for, select an audience, create survey questions, pay and then start receiving results from the network in real time. The platform distributes these surveys to thousands of mobile apps that have integrated surveys as a monetization solution. App publishers are paid for each survey completed in their apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/results.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;How does it look?&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;When a survey is available, the user is prompted by an in-app indicator to see if they would like to take part to a survey – and are rewarded for doing so by being entered into a drawing for a prize. Gifts are provided by the platform and are usually gift cards. Users can choose not to participate, or close the survey at anytime. In either case, everything will disappear from their screen, and they return to their in-app experience.&lt;/p&gt;
+
+&lt;p&gt;If a user decides to take a survey, they start by answering a series of questions that are presented in a mobile-optimized way. There are several types of questions including Single Answer, Multiple Answer, Rating Questions, Open-Ended, and Ranking – type. You can even insert images for participants to respond to. Once the survey is completed, users can optionally enter their email address to get informed if they win. Winning users are notified of the outcome on the day of the drawing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/animated_surv.gif&quot; align=&quot;center&quot; style=&quot;width: 200px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;&lt;b&gt;Key value propositions&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;There are several value propositions for using surveys for monetizing mobile apps:&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;For users:&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;It’s a new interactive format, different than ads - &lt;/b&gt;
+Users are highly engaged in-app, as they get to share their opinion and participate in interesting surveys. It’s not like boring ads made for the masses, where clicking takes you to another website or to download another app. Some surveys are more fun and engaging, particularly when the user can see their responses as compared to others – this increases the completion rate, and likewise, the app publisher’s revenue.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Users participate in drawings and can win gifts - &lt;/b&gt;
+Users who participate in surveys have the opportunity to win gifts in drawings – simply by sharing their opinion.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/amazon.jpg&quot; align=&quot;center&quot; style=&quot;width: 200px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;For publishers:&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Users stay within the app - &lt;/b&gt;
+Users never leave the app. Once a survey is completed, users continue with the current flow of the app interface. This is perhaps, the biggest differentiator with classic advertising, where users who click on an ad are taken to a website or get redirected to download another app – with no guarantee they come back. This way publishers loose customers.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Surveys pay up to 20x more than classic advertising networks - &lt;/b&gt;
+Publishers are paid per completed survey. It’s a CPA model where the action is a survey completion. Payouts for surveys are quite high and at Pollfish for example, surveys pay up to 20x more than classic advertising networks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/both_types.png&quot; align=&quot;center&quot; style=&quot;width: 400px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;There are 2 types of surveys&lt;/u&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;Basic surveys&lt;/b&gt; pay minimum $0.30 per completed survey and this price can go up to $2 per completed survey (it’s a shared revenue model)&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Playful surveys&lt;/b&gt; are usually small image question surveys that pay a fluctuating price depending on survey length. Average payouts on these surveys are $0.08 per completed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Publishers have to change nothing in the UI of their app - &lt;/b&gt;
+With surveys, everything is rendered as an overlay so publishers don’t have to change anything in the UI of the app. With most advertising solutions, a space in the UI of the apps needs to be allocated by publishers in order to render the ad units (for example with banner ads). However with surveys, since everything is displayed as an overlay, no changes are needed. Integration therefore becomes simple and takes less than 2 minutes since it requires only one line of code to activate surveys.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;{{ site.baseurl }}/images/monetization/monkey.png&quot; align=&quot;center&quot; style=&quot;width: 400px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;When a survey is completed UI stays clear of ads/surveys - &lt;/b&gt;
+Users are eligible for one survey per day in order to ensure quality of the results and user experience. Therefore, once a survey is completed everything disappears from the UI of the app and user can continue with the flow of the app free of any ads or surveys. Moreover, when no survey is available nothing is shown within the app, as surveys were never integrated in the app before.&lt;/li&gt;
+&lt;br /&gt;
+&lt;li&gt;&lt;b&gt;Publishers are allowed to incentivize users with in-app goodies in order to complete surveys - &lt;/b&gt;
+Surveys can be a really good alternative to rewarded videos since publishers can incentivize users with temporary ad removal on in-app goodies. This is a quite popular option since surveys pay well, and users prefer to interact with them resulting to higher revenues to the developers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/fishFarm1.jpg&quot; align=&quot;center&quot; style=&quot;width: 400px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Surveys can be part of a multiple-monetization strategy - &lt;/b&gt;
+Since surveys address market research field – a different marketplace than advertising – it can be used along with any other ad solution a publisher may be already using, even on the same screen, to boost revenue. This is something it can be easily achieved also since surveys are minimally obtrusive.&lt;/li&gt;
+&lt;br /&gt;
+&lt;img src=&quot;{{ site.baseurl }}/images/monetization/both.png&quot; align=&quot;center&quot; style=&quot;width: 200px; margin: 0 auto;&quot; /&gt;
+&lt;br /&gt;
+
+&lt;li&gt;&lt;b&gt;Publishers can create internal surveys for free and gather feedback from their users - &lt;/b&gt;
+Since surveys are already integrated in the apps as a monetization solution, publishers can use the DIY survey tool for free in order to get feedback from their users. For example publishers can create surveys to ask about new features with questions like: “What would you like to see in a future release” or “What you didn’t like in our last update?” and this way they can start an interactive dialog with their uses prior entering into a new development cycle, saving money and time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/feedback.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition publishers can use the DIY survey tool to perform A/B testing for future concepts.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;{{ site.baseurl }}/images/monetization/ab_surveys.png&quot; align=&quot;center&quot; style=&quot;width: 400px; margin: 0 auto;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Publishers can get insights for their apps - &lt;/b&gt;
+Since publishers are using a survey platform they can also benefit from profiles that the platform is building upon respondents that complete surveys. Having that said, publishers have direct access to a real time analytics/insights dashboard where they can learn more about their app’s users and make better decisions upon that.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;{{ site.baseurl }}/images/monetization/analytics.png&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;To conclude, surveys are new, frictionless way to monetize mobile apps, and add a new revenue stream to publishers’ current monetization solutions. Surveys can add value both in terms of monetization, analytics, feedback and a/b testing of an app allowing publishers to gain revenue from their apps without ads but also improve and create better apps by listening to their users. After all, publishers want to incorporate monetization methods that integrate well into the user experience, rather than ads that drive users away.&lt;/p&gt;
+</content>
+<category term="monetization" />
+<summary></summary>
+</entry>
+<entry>
 <title>Working with overlays - Giving birth to a new DecorView child</title>
-<link href="http://vourkosa.github.io/android/2016/03/21/Working-with-overlays-Giving-birth-to-a-new-DecorView-child.html" rel="alternate" type="text/html" title="Working with overlays - Giving birth to a new DecorView child" />
-<published>2016-03-21T13:15:20+02:00</published>
-<updated>2016-03-21T13:15:20+02:00</updated>
-<id>http://vourkosa.github.io/android/2016/03/21/Working with overlays - Giving birth to a new DecorView child</id>
-<content type="html" xml:base="http://vourkosa.github.io/android/2016/03/21/Working-with-overlays-Giving-birth-to-a-new-DecorView-child.html">&lt;p&gt;Following up the series of previous articles on how to create overlays on Android we will study in this post how to add an overlay over an Activity. We will do that by traversing it’s current view hierarchy and injecting directly a RelativeLayout below window’s DecorView. This RelativeLayout will hold the overlay layout, along with the original layout of the Activity that is already in place.&lt;/p&gt;
+<link href="http://vourkosa.github.io/android/2016/03/20/Working-with-overlays-Giving-birth-to-a-new-DecorView-child.html" rel="alternate" type="text/html" title="Working with overlays - Giving birth to a new DecorView child" />
+<published>2016-03-20T11:15:20+02:00</published>
+<updated>2016-03-20T11:15:20+02:00</updated>
+<id>http://vourkosa.github.io/android/2016/03/20/Working with overlays - Giving birth to a new DecorView child</id>
+<content type="html" xml:base="http://vourkosa.github.io/android/2016/03/20/Working-with-overlays-Giving-birth-to-a-new-DecorView-child.html">&lt;p&gt;Following up the series of previous articles on how to create overlays on Android we will study in this post how to add an overlay over an Activity. We will do that by traversing it’s current view hierarchy and injecting directly a RelativeLayout below window’s DecorView. This RelativeLayout will hold the overlay layout, along with the original layout of the Activity that is already in place.&lt;/p&gt;
 
 &lt;h3&gt;The Basics&lt;/h3&gt;
 
@@ -240,7 +363,7 @@
 
 &lt;h4&gt;4) Creating parent RelativeLayout&lt;/h4&gt;
 
-&lt;p&gt;We create a parent Relative Layout which will be the new parent/root of the Activity’s view hierarchy.&lt;/p&gt;
+&lt;p&gt;We create a parent RelativeLayout which will be the new parent/root of the Activity’s view hierarchy.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ourRelativeLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;act&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -267,7 +390,7 @@
 
 &lt;h4&gt;7) Adding our parent RelativeLayout to DecorView&lt;/h4&gt;
 
-&lt;p&gt;If this is the first time we re-arrange the views we just add our RelativeLayout to the parent view, otherwise we find the current position of the child view in the tree and we use it in order to add our RelativeLayout in the appropriate order in the tree:&lt;/p&gt;
+&lt;p&gt;If this is the first time we re-arrange the views we just add our RelativeLayout to the parent view, otherwise we find use the original position of DecorView’s child view in the tree and we use it in order to add our RelativeLayout in the appropriate index/order in the tree:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rootParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
                      &lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MATCH_PARENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -278,7 +401,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;or (if this is nto the first time we re-arrange)&lt;/p&gt;
+&lt;p&gt;or (if this is not the first time we re-arrange)&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ourRelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexOfParentInInitialHierarchy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rootParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;
@@ -286,7 +409,7 @@
 
 &lt;h4&gt;8) Adding our OverlayLayout to parent RelativeLayout&lt;/h4&gt;
 
-&lt;p&gt;We then add our overlay layout to our parent RelativeLayout and we are ready! OverlayLayout will be placed on top of the content of the original DecorView’s child as explained in the introduction of this article.&lt;/p&gt;
+&lt;p&gt;We then add our OverlayLayout to our parent RelativeLayout and we are ready! OverlayLayout will be placed on top of the content of the original DecorView’s child as explained in the introduction of this article.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;overlayParam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MATCH_PARENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MATCH_PARENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;overlayParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addRule&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RelativeLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ALIGN_PARENT_BOTTOM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  					
@@ -304,7 +427,7 @@
 
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;To conclude, messing around with the view hierarchy of an Activity on the DecorView level is wrong. There so many things that can go bad. Params inherited by child view layouts or flags that affect the structure of the view tree can easily go away when you brake the consistency of the structured view tree. During the last 2 years we had to identify, track and solve such issues in an agnostic environment.&lt;/p&gt;
+&lt;p&gt;To conclude, messing around with the view hierarchy of an Activity on the DecorView level is wrong. There so many things that can go bad. Parameters inherited by child view layouts or flags that affect the structure of the view tree can easily go away when you brake the consistency of the structured view tree. During the last 2 years we had to identify, track and solve such issues in an agnostic environment.&lt;/p&gt;
 
 &lt;p&gt;I will try to find some time later on this week to publish an open source example of this implementation in order for anyone interested to look into this further.&lt;/p&gt;
 
@@ -1328,36 +1451,5 @@ This is the point where a window leak will occur.&lt;/p&gt;
 </content>
 <category term="monetization" />
 <summary>In our last article we discussed about monetizing upon user feelings and in particular around scarcity, uniqueness and exclusiveness. Today we are going deeper around scarcity and we will discuss upon monetizing around user impatience.</summary>
-</entry>
-<entry>
-<title>Monetizing upon scarcity, exclusiveness and uniqueness</title>
-<link href="http://vourkosa.github.io/monetization/2015/03/16/Monetizing-upon-scarcity-exclusiveness-and-uniqueness.html" rel="alternate" type="text/html" title="Monetizing upon scarcity, exclusiveness and uniqueness" />
-<published>2015-03-16T16:37:44+02:00</published>
-<updated>2015-03-16T16:37:44+02:00</updated>
-<id>http://vourkosa.github.io/monetization/2015/03/16/Monetizing-upon-scarcity-exclusiveness-and-uniqueness</id>
-<content type="html" xml:base="http://vourkosa.github.io/monetization/2015/03/16/Monetizing-upon-scarcity-exclusiveness-and-uniqueness.html">&lt;p&gt;There are a lot of things app developers can monetize around an app user but nothing compares with monetizing upon user feelings.&lt;/p&gt;
-
-&lt;p&gt;Designing an app to work in an abundance environment is usually a wrong strategic approach in terms of monetization. Abundance is usually not appreciated by anyone and does not motivate a user. Creating short times of abundance within a scarcity period, can be quite appealing and challenging for a user, creating several monetization opportunities in the way. An app user that is in position to have everything he needs whenever he needs it within an app, is quite difficult to be monetized.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/scarcity.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Moreover, if an app is designed in a way that the user feels some sort of uniqueness while making progress within the app, or he is offered the option to has access to something exclusive, this can end up to very good conversions monetization wise.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Scarcity&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;An app developer should control scarcity when designing an app in way that users are always able to achieve a goal which is difficult (or has a price) but always feasible. If a user does not have all features available at once or does not have unlimited ammo, or unlimited weapons οr lives within a game for example, that user will appreciate more the opportunity to renew, expand or reveal resources through monetization moments either through IAP or by completing specific tasks like watching a video, clicking an ad or completing a survey. Trying to monetize an app user who lives in abundance within the app, usually converts to frustration and affects retention rather than converting around monetization.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Exclusiveness&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Investing on the feeling of exclusiveness can deliver real good results for the app developer. A good monetization strategy can unveil features of the app that can only be achieved or acquired by an exclusive subpart of the user base of the app. Providing features that a user cannot easily have, usually results to users pursuing aggressively such features. It is in human nature to seek for things that you cannot have. The feeling of being able to receive some things exclusively usually increases the desire of the user and ends up to more straightforward monetization moments for the developer.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Uniqueness&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Making an app user feeling unique during the app’s lifecycle, creates several opportunities too. For example, during a game when a user completes a level, the app owner can reward that user for his performance and maybe give him the option to win/buy some virtual goodies or get a discount in a purchase because of that “special” achievement. This approach gives to the user the emotion of uniqueness and gives the feeling of seeing an opportunity because of achieving something..for outstanding from the crowd..for being unique…!! The app developer can capitalize upon this feeling, with several different monetization options.&lt;/p&gt;
-
-&lt;p&gt;All the aforementioned feelings and emotions usually overlap. Being able to implement and achieve them within the app’s lifecycle upon a user, can create very good monetization chances and therefore they should be considered and implemented by the app developer when designing the monetization strategy of an app.&lt;/p&gt;
-</content>
-<category term="monetization" />
-<summary>There are a lot of things app developers can monetize around an app user but nothing compares with monetizing upon user feelings.</summary>
 </entry>
 </feed>

@@ -74,7 +74,7 @@ Another approach followed by several app developers, is giving the option to the
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-lG-l8bP8TY" frameborder="0" align="middle" allowfullscreen></iframe>
 
-
+<br/>
 Following up the wheel of fortune approach, a similar concept is including of what is called “mystery boxes” within an app that delivers non predefined prizes; and users can collect, find or visit within the app. This is a great approach for driving addiction and engagement on the users of an app. A good example of this technique can be seen in Subway Surfers app where users are able to collect several Mystery Boxes and win a variety of prizes. As you may see in the video above the user challenges himself on how many boxes he can collect and explore what prizes they are hiding inside them.
 
 <b>Blind spending</b>

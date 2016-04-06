@@ -49,7 +49,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/android">Android Development</a></li>
-                         <li><a href="/ios">iOS Development</a></li>
+                        <!-- <li><a href="/ios">iOS Development</a></li>-->
                 <li><a href="/monetization">Monetization Tips</a></li>
             </ul>
         </nav>
@@ -69,6 +69,22 @@
                 <section >
     <div class="container">
 
+            <article>
+                <header>
+                    <h2><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html">Sharing Android libraries as JARs - Including and reading image resources</a></h2>
+                    <h5>6 April 2016&nbsp;&nbsp;| &nbsp;&nbsp;Android</h5>
+                </header>
+                <section class="post-content">
+                </br>
+                    <p>When deciding to create a library that will be distributed publicly among the developer ecosystem you need to consider in which format you will expose it to the community. <br /></p> <h3>Initial considerations</h3> <p>There are several things that affect this decision and there are several formats to choose from. Does your library need to include Android resources to perform, is this an open or a closed source project? What is your major target audience, what are the main tools this audience uses and which format are they more familiar with? Where will you host this library and many other factors...
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </article>
+        
             <article>
                 <header>
                     <h2><a href="/monetization/2016/03/31/How-To-Monetize-Your-Mobile-App-Using-In-App-Surveys.html">How To Monetize Your Mobile App Using In-App Surveys</a></h2>
@@ -113,22 +129,6 @@
                 <section class="special">
                     <ul class="actions">
                         <li><a href="/monetization/2016/03/17/Making-an-app-survive-in-Android-ocean.html" class="button special">Read More</a></li>
-                    </ul>
-                </section>
-            </article>
-        
-            <article>
-                <header>
-                    <h2><a href="/android/2016/02/06/Working-with-overlays-PhoneWindow-a-not-so-famous-window.html">Working with overlays - PhoneWindow, a not-so-famous window</a></h2>
-                    <h5>6 February 2016&nbsp;&nbsp;| &nbsp;&nbsp;Android</h5>
-                </header>
-                <section class="post-content">
-                </br>
-                    <p>In this article we will discuss how we can create an overlay view above an Activity with the help of PhoneWindow and its inner class DecorView.</p> <p>As we discussed in previous post, when an Activity is launched, a window is created in order to render the views and interact with the user. Usually this is a full screen window but developers have also the option to display a non full screen activity with the relevant Theme (like floating windows or render activity through a group of other activities like in an ActivityGroup).</p> <p>But what happens under the hood? If we...
-                </section>
-                <section class="special">
-                    <ul class="actions">
-                        <li><a href="/android/2016/02/06/Working-with-overlays-PhoneWindow-a-not-so-famous-window.html" class="button special">Read More</a></li>
                     </ul>
                 </section>
             </article>
@@ -181,6 +181,21 @@
 
 <!--<section id="one" >
     <div class="container">
+        
+            <article>
+                <header>
+                    <h2><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html">Sharing Android libraries as JARs - Including and reading image resources</a></h2>
+                    <h5>6 April 2016</h5>
+                </header>
+                <section class="post-content">
+                    <p>When deciding to create a library that will be distributed publicly among the developer ecosystem you need to consider in which format you will expose it to the community. <br /></p> <h3>Initial considerations</h3> <p>There are several things that affect this decision and there are several formats to choose from. Does your library need to include Android resources to perform, is this an open or a closed source project? What is your major target audience, what are the main tools this audience uses and which format are they more familiar with? Where will you host this library and many other factors should be taken under consideration.</p> <h3>Major formats</h3> <p>Currently, there are four major formats out there:</p> <ul> <li><b>1) Library module - </b> <a href="http://developer.android.com/tools/projects/index.html#LibraryProjects" target="_blank">Library modules</a> contain shareable source code and resources. Developers can reference them in their Android projects and, at build time, include its compiled sources in their apks. Library modules have a structure similar to Android projects but cannot include raw assets. Distributing a library this way, requires providing source code publicly available and maintaining it among the community with any implications this might have </li> <li><b>2) JAR - </b> Jar files are used widely among the Android and Java community in general. It is a Java archive format that contains all classes of the library (*class files). The contents of a jar file can be extracted easily...
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </article>
         
             <article>
                 <header>
@@ -242,26 +257,27 @@
                 </section>
             </article>
         
-            <article>
-                <header>
-                    <h2><a href="/android/2016/01/15/Working-with-overlays.html">Working with overlays - Life under WindowManager</a></h2>
-                    <h5>15 January 2016</h5>
-                </header>
-                <section class="post-content">
-                    <p>This is the start of a series of articles regarding creating and using overlays on Android. An overlay is a view that is placed above other views. Such views can be created on Android with several different ways and for different purposes.</p> <p>There are several usages for overlays on Android. Some of them include:</p> <ol> <li>Floating buttons/menus</li> <li>Onboarding tutorials</li> <li>Advertising</li> <li>Augmented Reality</li> <li>Fancy animations</li> </ol> <h3>Life under WindowManager</h3> <p>In this article we will see how we can create an overlay view that will lie on top of other applications with the help of WindowManager.</p> <p>But let’s see first what is a <a href="http://developer.android.com/reference/android/view/WindowManager.html" target="_blank">WindowManager.</a> WindowManager is a system service responsible for organizing the screen. It interacts with applications to create windows and decides where they will go on the screen and in which order. When creating a window, WindowManager requests a Surface for that window and on that Surface, an application will draw its user interface. Each window is a container of views and has its own view hierarchy.</p> <p><u>But let's be more specific and list what a WindowManager is and what it does:</u></p> <ul> <li>A system service </li> <li>It requests the creation and allocation of surfaces for the clients (applications)</li> <li>Is responsible of which windows are visible, their z-order and how they are laid on the screen </li> <li>It deals and dispatches input and focus events to clients </li>...
-                </section>
-                <section class="special">
-                    <ul class="actions">
-                        <li><a href="/android/2016/01/15/Working-with-overlays.html" class="button special">Read More</a></li>
-                    </ul>
-                </section>
-            </article>
-        
     </div>
 </section>-->
 <!--<section>
     <div class="container">
         <div class="features">
+        
+            <article>
+                <section class="excerpt">
+                <header>
+                    <h3><a href="/monetization/2016/03/31/How-To-Monetize-Your-Mobile-App-Using-In-App-Surveys.html">How To Monetize Your Mobile App Using In-App Surveys</a></h3>
+                </header>
+                
+                    <p><img src="/images/monetization/surv.jpg" /></p> <p>Mobile monetization is one of the key issues app developers face in today’s mobile world. As apps’ visibility become more and more hard, developers are looking for...
+                </section>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="/monetization/2016/03/31/How-To-Monetize-Your-Mobile-App-Using-In-App-Surveys.html" class="button">Read More</a></li>
+                    </ul>
+                </footer>
+                <div class="clear"></div>
+            </article>
         
             <article>
                 <section class="excerpt">

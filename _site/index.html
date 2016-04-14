@@ -49,7 +49,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/android">Android Development</a></li>
-                        <!-- <li><a href="/ios">iOS Development</a></li>-->
+                <li><a href="/ios">iOS Development</a></li>
                 <li><a href="/monetization">Monetization Tips</a></li>
             </ul>
         </nav>
@@ -69,6 +69,22 @@
                 <section >
     <div class="container">
 
+            <article>
+                <header>
+                    <h2><a href="/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html">How to build an iOS framework with bitcode support, keeping backwards compatibility with XCode 6</a></h2>
+                    <h5>14 April 2016&nbsp;&nbsp;| &nbsp;&nbsp;iOS</h5>
+                </header>
+                <section class="post-content">
+                </br>
+                    <p>When creating our own iOS framework, after the release of XCode 7 we needed to start supporting bitcode. For those not familiar with bitcode, bitcode is an intermediate representation of a compiled program and is part of the App Thinning feature introduced in XCode 7. With Bitcode, apps can be re-optimized for each device before being delivered to a user. You can read more on this on Apple docs <a href="https://developer.apple.com/library/tvos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html" target="_blank">here.</a></p> <h3>The problem</h3> <p>You can easily build an iOS library with bitcode support. In order to achieve that you just need to go to <b>Build settings</b>, search for <b>“custom...
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </article>
+        
             <article>
                 <header>
                     <h2><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html">Sharing Android libraries as JARs - Including and reading image resources</a></h2>
@@ -113,22 +129,6 @@
                 <section class="special">
                     <ul class="actions">
                         <li><a href="/android/2016/03/20/Working-with-overlays-Giving-birth-to-a-new-DecorView-child.html" class="button special">Read More</a></li>
-                    </ul>
-                </section>
-            </article>
-        
-            <article>
-                <header>
-                    <h2><a href="/monetization/2016/03/17/Making-an-app-survive-in-Android-ocean.html">Making an app survive in Android’s ocean</a></h2>
-                    <h5>17 March 2016&nbsp;&nbsp;| &nbsp;&nbsp;Monetization</h5>
-                </header>
-                <section class="post-content">
-                </br>
-                    <p><img src="/images/monetization/google_vest.png" /></p> <p>As apps’ visibility becomes more and more difficult, app developers are working hard to make their apps stand out among thousands of new apps appearing every day. There is a big variety of articles out there on how to increase an app’s discoverability through ASO techniques, marketing campaigns and others. What is most important, though? Spend on ad marketing campaigns? Creating press releases, or dive into Google Play mechanisms to understand and position better an app on store? Anyone could argue that app developers should be doing all of that anyway…this is so true, but where should...
-                </section>
-                <section class="special">
-                    <ul class="actions">
-                        <li><a href="/monetization/2016/03/17/Making-an-app-survive-in-Android-ocean.html" class="button special">Read More</a></li>
                     </ul>
                 </section>
             </article>
@@ -181,6 +181,21 @@
 
 <!--<section id="one" >
     <div class="container">
+        
+            <article>
+                <header>
+                    <h2><a href="/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html">How to build an iOS framework with bitcode support, keeping backwards compatibility with XCode 6</a></h2>
+                    <h5>14 April 2016</h5>
+                </header>
+                <section class="post-content">
+                    <p>When creating our own iOS framework, after the release of XCode 7 we needed to start supporting bitcode. For those not familiar with bitcode, bitcode is an intermediate representation of a compiled program and is part of the App Thinning feature introduced in XCode 7. With Bitcode, apps can be re-optimized for each device before being delivered to a user. You can read more on this on Apple docs <a href="https://developer.apple.com/library/tvos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html" target="_blank">here.</a></p> <h3>The problem</h3> <p>You can easily build an iOS library with bitcode support. In order to achieve that you just need to go to <b>Build settings</b>, search for <b>“custom compiler flags”</b> and add <b>-fembed-bitcode</b>. This flag informs XCode to build the library with bitcode and everything works fine under XCode 7. However by following the approach above we loose backwards compatibility with XCode 6. Having that said we need to ship 2 different library versions, one with bitcode flag and one without, since not everyone in our developers’ community upgraded to XCode 7.</p> <h3>The solution</h3> <p>In order to be able to provide a single framework that would support both bitcode enabled or not apps, we needed to create a fat library that would include both configurations.</p> <p>We build therefore our configurations with xcodebuild both with ENABLE_BITCODE=NO and ENABLE_BITCODE=YES as shown below:</p> <div class="highlighter-rouge"><pre class="highlight"><code>xcodebuild -configuration "Release" ENABLE_BITCODE=NO -target "${FMK_NAME}" -sdK iphoneos xcodebuild -configuration "Release" ENABLE_BITCODE=NO -target "${FMK_NAME}" -sdk iphonesimulator...
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </article>
         
             <article>
                 <header>
@@ -242,26 +257,27 @@
                 </section>
             </article>
         
-            <article>
-                <header>
-                    <h2><a href="/android/2016/02/06/Working-with-overlays-PhoneWindow-a-not-so-famous-window.html">Working with overlays - PhoneWindow, a not-so-famous window</a></h2>
-                    <h5>6 February 2016</h5>
-                </header>
-                <section class="post-content">
-                    <p>In this article we will discuss how we can create an overlay view above an Activity with the help of PhoneWindow and its inner class DecorView.</p> <p>As we discussed in previous post, when an Activity is launched, a window is created in order to render the views and interact with the user. Usually this is a full screen window but developers have also the option to display a non full screen activity with the relevant Theme (like floating windows or render activity through a group of other activities like in an ActivityGroup).</p> <p>But what happens under the hood? If we dive deeper in Android source code we will see that most of all these, happen around an implementation of Window’s abstract class, which is called <a href="https://android.googlesource.com/platform/frameworks/base/+/7d276c3/policy/src/com/android/internal/policy/impl/PhoneWindow.java" target="_blank">PhoneWindow.</a></p> <p>When an activity starts, the ActivityManager along with WindowManager request the creation of a PhoneWindow. PhoneWindow is responsible for holding the activity’s view hierarchy. Creation of PhoneWindow is requested by activity’s attach internal method:</p> <p>Activity.java</p> <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">final</span> <span class="kt">void</span> <span class="nf">attach</span><span class="p">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">ActivityThread</span> <span class="n">aThread</span><span class="o">,</span> <span class="n">Instrumentation</span> <span class="n">instr</span><span class="o">,</span> <span class="n">IBinder</span> <span class="n">token</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ident</span><span class="o">,</span> <span class="n">Application</span> <span class="n">application</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="n">ActivityInfo</span> <span class="n">info</span><span class="o">,</span> <span class="n">CharSequence</span> <span class="n">title</span><span class="o">,</span> <span class="n">Activity</span> <span class="n">parent</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">,</span> <span class="n">NonConfigurationInstances</span> <span class="n">lastNonConfigurationInstances</span><span...
-                </section>
-                <section class="special">
-                    <ul class="actions">
-                        <li><a href="/android/2016/02/06/Working-with-overlays-PhoneWindow-a-not-so-famous-window.html" class="button special">Read More</a></li>
-                    </ul>
-                </section>
-            </article>
-        
     </div>
 </section>-->
 <!--<section>
     <div class="container">
         <div class="features">
+        
+            <article>
+                <section class="excerpt">
+                <header>
+                    <h3><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html">Sharing Android libraries as JARs - Including and reading image resources</a></h3>
+                </header>
+                
+                    <p>When deciding to create a library that will be distributed publicly among the developer ecosystem you need to consider in which format you will expose it to the community. <br...
+                </section>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html" class="button">Read More</a></li>
+                    </ul>
+                </footer>
+                <div class="clear"></div>
+            </article>
         
             <article>
                 <section class="excerpt">

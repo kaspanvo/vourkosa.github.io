@@ -3,10 +3,60 @@
 <generator uri="http://jekyllrb.com" version="3.0.1">Jekyll</generator>
 <link href="http://vourkosa.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://vourkosa.github.io/" rel="alternate" type="text/html" />
-<updated>2016-04-06T15:02:29+03:00</updated>
+<updated>2016-04-14T13:19:25+03:00</updated>
 <id>http://vourkosa.github.io/</id>
 <subtitle>This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
 </subtitle>
+<entry>
+<title>How to build an iOS framework with bitcode support, keeping backwards compatibility with XCode 6</title>
+<link href="http://vourkosa.github.io/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html" rel="alternate" type="text/html" title="How to build an iOS framework with bitcode support, keeping backwards compatibility with XCode 6" />
+<published>2016-04-14T13:21:11+03:00</published>
+<updated>2016-04-14T13:21:11+03:00</updated>
+<id>http://vourkosa.github.io/ios/2016/04/14/How to build an iOS library with Bitcode support and keep backwards compatibility with XCode 6</id>
+<content type="html" xml:base="http://vourkosa.github.io/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html">&lt;p&gt;When creating our own iOS framework, after the release of XCode 7 we needed to start supporting bitcode. For those not familiar with bitcode, bitcode is an intermediate representation of a compiled program and is part of the App Thinning feature introduced in XCode 7. With Bitcode, apps can be re-optimized for each device before being delivered to a user. You can read more on this on Apple docs &lt;a href=&quot;https://developer.apple.com/library/tvos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html&quot; target=&quot;_blank&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;The problem&lt;/h3&gt;
+
+&lt;p&gt;You can easily build an iOS library with bitcode support. In order to achieve that you just need to go to &lt;b&gt;Build settings&lt;/b&gt;, search for &lt;b&gt;“custom compiler flags”&lt;/b&gt; and add &lt;b&gt;-fembed-bitcode&lt;/b&gt;. This flag informs XCode to build the library with bitcode and everything works fine under XCode 7. However by following the approach above we loose backwards compatibility with XCode 6. Having that said we need to ship 2 different library versions, one with bitcode flag and one without, since not everyone in our developers’ community upgraded to XCode 7.&lt;/p&gt;
+
+&lt;h3&gt;The solution&lt;/h3&gt;
+
+&lt;p&gt;In order to be able to provide a single framework that would support both bitcode enabled or not apps, we needed to create a fat library that would include both configurations.&lt;/p&gt;
+
+&lt;p&gt;We build therefore our configurations with xcodebuild both with ENABLE_BITCODE=NO and ENABLE_BITCODE=YES as shown below:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcodebuild -configuration &quot;Release&quot; ENABLE_BITCODE=NO -target &quot;${FMK_NAME}&quot; -sdK iphoneos 
+xcodebuild -configuration &quot;Release&quot; ENABLE_BITCODE=NO -target &quot;${FMK_NAME}&quot; -sdk iphonesimulator
+xcodebuild -configuration &quot;Release&quot; ENABLE_BITCODE=YES -target &quot;${FMK_NAME}&quot; -sdk iphonesimulator
+xcodebuild -configuration &quot;Release&quot; ENABLE_BITCODE=YES -target &quot;${FMK_NAME}&quot; -sdk iphoneos
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and then create a fat library using &lt;b&gt;lipo&lt;/b&gt; command like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lipo -create &quot;${DEVICE_DIR}/${FMK_NAME}&quot; &quot;${SIMULATOR_DIR}/${FMK_NAME}&quot; -output &quot;${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can easily check if a binary is bitcode compatible with &lt;b&gt;otool&lt;/b&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;otool -l (myLibName.o or myLibName.a file) | grep __LLVM.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The generated framework supports both bitcode-enabled and non bitcode-enabled apps, both on XCode 6 and XCode 7.&lt;/p&gt;
+
+&lt;h3&gt;P.S. Tip&lt;/h3&gt;
+
+&lt;p&gt;Since XCode 7.3, there is a major bug when running xcodebuild from a “Run Script”, that affects the environment variable TOOLCHAINS. This is a known bug and the only workaround at the moment as described &lt;a href=&quot;http://stackoverflow.com/questions/36184930/xcodebuild-7-3-cant-enable-bitcode&quot; target=&quot;_blank&quot;&gt; here &lt;/a&gt; is to unset TOOLCHAINS at the beginning of your script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unset TOOLCHAINS
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="ios" />
+<summary>When creating our own iOS framework, after the release of XCode 7 we needed to start supporting bitcode. For those not familiar with bitcode, bitcode is an intermediate representation of a compiled program and is part of the App Thinning feature introduced in XCode 7. With Bitcode, apps can be re-optimized for each device before being delivered to a user. You can read more on this on Apple docs here.</summary>
+</entry>
 <entry>
 <title>Sharing Android libraries as JARs - Including and reading image resources</title>
 <link href="http://vourkosa.github.io/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html" rel="alternate" type="text/html" title="Sharing Android libraries as JARs - Including and reading image resources" />
@@ -1500,35 +1550,5 @@ Following up the wheel of fortune approach, a similar concept is including of wh
 </content>
 <category term="monetization" />
 <summary>It is widely accepted, that a very interesting need that thrives among people, is the need of being part of something, even if that thing is not tangible, nor something that users can actually benefit from somehow. Being able to apply such a concept around an app’s design, can leverage several monetization opportunities in the long run.</summary>
-</entry>
-<entry>
-<title>Monetizing upon social competitiveness and acknowledgment</title>
-<link href="http://vourkosa.github.io/monetization/2015/03/31/Monetizing-upon-social-competitiveness-and-acknowledgment.html" rel="alternate" type="text/html" title="Monetizing upon social competitiveness and acknowledgment" />
-<published>2015-03-31T17:37:44+03:00</published>
-<updated>2015-03-31T17:37:44+03:00</updated>
-<id>http://vourkosa.github.io/monetization/2015/03/31/Monetizing-upon-social-competitiveness-and-acknowledgment</id>
-<content type="html" xml:base="http://vourkosa.github.io/monetization/2015/03/31/Monetizing-upon-social-competitiveness-and-acknowledgment.html">&lt;p&gt;Following up the latest blog posts about monetizing around user feelings, today we are going to discuss about monetizing around social behaviour.&lt;/p&gt;
-
-&lt;p&gt;Every mobile app needs a loyal user base in order to be able to generate some serious money for its owner. One of the most difficult things out there is to attract users to the app and engage them, so that eventually later on, will spent some money within the app.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/social4.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Build a community fist &lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Every app has a user base, that shares some common interests. After all, these users ended up using the same app for a reason. Converting this user base to an active community is a big challenge. App publishers should try, when designing their apps, to make them as social as possible. Initially they should focus towards growing their user base and creating a community around their app by leveraging a social environment. Users need a relevant audience to discuss and expose achievements or progress. Building a community around the app and allowing interaction between its members, brings engagement to the users, rise competitiveness and if exposed properly, can drive awareness about the app and bring virality and wider adoption.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Implement the right social components&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;While designing an app, publishers should choose the right social components to integrate based on the context of their app and their app’s userbase profile. Leveraging social behaviour through an app can attract users to come and use an app again and again for all kind of different reasons. Some of them would like to use it in order to compete with others for social acknowledgement and exposure; and others because they just want to be part of a social environment. Social components can be anything, from progress bars, badges, leaderboards, achievements, to virtual goods. Integrating these components and mechanisms properly within an app can raise community engagement, collaboration and competitiveness, increasing this way loyalty and adoption of the app.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Monetize upon social competitiveness and acknowledgement&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;When an app publisher has successfully integrated social characteristics and components in the app, and a loyal user base exists, monetization opportunities can be revealed where users, in the shake of feelings like social competitiveness and acknowledgement, are willing to spend money within the app. These opportunities may be in the form of in-app purchases for unlocking a stage and letting the user proceed, or gaining virtual goodies that will bring an advantage to the user against others, or even taking specific advertising tasks in order to help proceed further for example and get socially exposed.&lt;/p&gt;
-
-&lt;p&gt;To conclude, app publishers should consider making their app as much social as possible by exposing several social characteristics and build a community around them. Engagement and retention that will follow through these social aspects of the app will reveal later on, opportunities to monetize upon social feelings like competitiveness and acknowledgement, that will thrive.&lt;/p&gt;
-
-</content>
-<category term="monetization" />
-<summary>Following up the latest blog posts about monetizing around user feelings, today we are going to discuss about monetizing around social behaviour.</summary>
 </entry>
 </feed>

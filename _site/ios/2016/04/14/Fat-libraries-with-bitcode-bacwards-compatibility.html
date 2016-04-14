@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+    
+	<head>
+		<title>Personal blog around mobile monetization, android and ios development</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Personal blog around mobile monetization, Android and iOS development and other things learned while developing mobile apps for both platforms." />
+		<meta name="keywords" content="android,monetization" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.scrollzer.min.js"></script>
+		<script src="/js/jquery.scrolly.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73073179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+		
+    <body>
+        <div id="wrapper">
+        <!-- Header -->
+    <section id="header" class="skel-layers-fixed">
+        <header>
+            <span class="image avatar"><img src="/images/avatar.png" alt="" /></span>
+            <h1 id="logo"><a href="/">Andreas Vourkos</a></h1>
+              <p>Building mobile apps since the early days of J2ME...</p>
+            <span class="image pollfish"><a href="https://www.pollfish.com" target="_blank"> <img  src="/images/polfish.png" alt="" /></a></span>
+          <p>The mobile engineer behind <a href="https://www.pollfish.com" target="_blank">Pollfish</a> Android and iOS SDKs</p>
+
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/android">Android Development</a></li>
+                <li><a href="/ios">iOS Development</a></li>
+                <li><a href="/monetization">Monetization Tips</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <ul class="icons">
+                 <li><a href="https://twitter.com/vourkosa" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.linkedin.com/in/andreasvourkos" class="icon fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+                <li><a href="https://github.com/vourkosa" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+            <!-- Main -->
+            <div id="main">
+                <section>
+ 
+    <div class="container">
+    
+        <header class="major">
+            <h2>Using weak-linked function arguments in a third party iOS framework</h2>
+                <p class="post-meta">14 April 2016&nbsp;&nbsp; | &nbsp;&nbsp; iOS    </p>  
+        </header>
+
+        <section class="post-content">
+            <p>2016-04-14-Fat libraries with bitcode bacwards compatibility</p>
+
+<p>While developing our own third party framework (let’s call it framework A) that is being used extensively by other fellow iOS developers we met the case where we wanted to weak-link a system framework (let’s call it framework B) to our framework A. With this approach other developers could use our framework A with its basic functionality and if they would like they could also optionally link framework B to their apps and receive enhanced functionality from framework A.</p>
+
+<p>So far there is nothing special here, these cases are well documented in Apple’s <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html" target="_blank">documentation</a>. However, for our own framework we wanted to expose two public functions for other developers while using our framework A.</p>
+
+<p><u>These functions would be:</u></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>+ (void) init;
++ (void) sendLocation: (CLLocation *) curLocation; // optional
+</code></pre>
+</div>
+
+<h3>The problem</h3>
+
+<p>Developers can use the basic functionality of our framework A just by using <i>init</i> function. However, if they wish they can optionally call <i>sendLocation</i> function and enhance the provided functionality of framework A. The problem here is that, for example, CLLocation is part of CoreLocation.framework (framework B) and we de not want developers to be forced to include it in their app projects in order to use our framework A. This is a classic approach for weak-linking a framework. The problem though is that since <i>sendLocation</i> function will be exposed to all developers (both those that want to include CoreLocation.framework in their apps and those who don’t), it cannot include CLLocation class as an argument for the public function of our framework A, since this will force developers to import CoreLocation.framework for their app projects in order to compile.</p>
+
+<p>If developers do not include CoreLocation.framework (framework B) to their app projects along with our framework A, this will result to an exception like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> _OBJC_CLASS_$_CLLocation", referenced from: 
+</code></pre>
+</div>
+
+<h3>The solution</h3>
+
+<p>The solution is quite straightforward. We go and weak-link CoreLocation.framework in our framework A project:</p>
+
+<p><img src="/images/ios/weaklink.png" /></p>
+
+<p>And then instead of using CLLocation class as the function argument we will use (id).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>+ (void) sendLocation:(id) curLocation]; 
+</code></pre>
+</div>
+
+<p>After that in order to avoid importing CoreLocation.framework, in runtime, we will check availability of CLLocation weak-linked class with NSClassFromString function as described <a href="https://developer.apple.com/library/ios/documentation/DeveloperTools/Conceptual/cross_development/Using/using.html" target="_blank"> here.</a></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if(NSClassFromString(@"CLLocation")){
+}
+</code></pre>
+</div>
+
+<p>Finally, we use  <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/BasicPrinciples.html" target="_blank">valueForKey</a> to extract NSValues from our location object and then convert to relevant types. For coordinate, which is a CLLocationCoordinate2D we create a Struct object and retrieve our values there.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>+ (void) sendLocation: (id) curLocation
+{
+	if(NSClassFromString(@"CLLocation")){
+
+		NSValue *mCoordicate =[location valueForKey:@"coordinate"];
+            
+            struct MyLocationStruct
+            {
+                double mLatitude;
+                double mLongitude;
+            };
+            
+            struct MyLocationStruct myLocationStruct;
+            
+            [mCoordicate getValue:&amp;myLocationStruct];
+
+			double altitude=  [[location valueForKey:@"altitude"] doubleValue];
+			NSString *description = [NSString stringWithFormat:@"%@",[location valueForKey:@"description"] ];
+			double verticalAccuracy=  [[location valueForKey:@"verticalAccuracy"] doubleValue];
+			double horizontalAccuracy=  [[location valueForKey:@"horizontalAccuracy"] doubleValue];
+			double speed=  [[location valueForKey:@"speed"] doubleValue];
+			double course=  [[location valueForKey:@"course"] doubleValue];
+
+            NSDate *timestamp=  [location valueForKey:@"timestamp"];
+            long timestampInterval = [timestamp timeIntervalSince1970];
+            }
+}
+</code></pre>
+</div>
+
+<p>Special thanks to ThePantsThief on reddit that helped towards the the right direction.</p>
+
+        
+        </section>
+       
+ 
+ <div class="share-page">
+    <a href="https://twitter.com/intent/tweet?text=Using weak-linked function arguments in a third party iOS framework&url=http://vourkosa.github.io/ios/2016/04/14/Fat-libraries-with-bitcode-bacwards-compatibility.html&via=vourkosa&related=vourkosa" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    &nbsp;&nbsp;<a href="https://facebook.com/sharer.php?u=http://vourkosa.github.io/ios/2016/04/14/Fat-libraries-with-bitcode-bacwards-compatibility.html" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    &nbsp;&nbsp;<a href=" http://www.linkedin.com/shareArticle?mini=true&url=http://vourkosa.github.io/ios/2016/04/14/Fat-libraries-with-bitcode-bacwards-compatibility.html&title=Using weak-linked function arguments in a third party iOS framework&source=" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    &nbsp;&nbsp;<a href="https://plus.google.com/share?url=http://vourkosa.github.io/ios/2016/04/14/Fat-libraries-with-bitcode-bacwards-compatibility.html" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
+    &nbsp;&nbsp;<a href="http://www.reddit.com/submit?url=http://vourkosa.github.io/ios/2016/04/14/Fat-libraries-with-bitcode-bacwards-compatibility.html" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
+
+
+
+</div>
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'vourkosa'; // required: replace example with your forum shortname
+    	var disqus_developer = 1; // Comment out when the site is live
+        var disqus_identifier = "/ios/2016/04/14/Fat-libraries-with-bitcode-bacwards-compatibility.html";
+//s.src = '//vourkosa.disqus.com/embed.js';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        <footer>
+        <div class="foot">
+            
+            <a href="/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html" class="button special2">Previous</a> 
+            
+        </footer>
+  </div>
+    </div>
+
+</section>
+
+
+            </div>
+            <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>&copy; Andreas Vourkos 2016. All rights reserved.</li>
+                <li>A Jekyll Theme by: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+
+		</div>
+	</body>
+</html>

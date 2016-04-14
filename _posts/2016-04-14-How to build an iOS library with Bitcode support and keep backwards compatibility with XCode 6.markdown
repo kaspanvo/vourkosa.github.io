@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to build an iOS framework with bitcode support, keeping backwards compatibility with XCode 6
+title: How to build an iOS framework with bitcode support, keeping backwards compatibility
 date:  2016-04-14 10:21:11
 categories: iOS 
 tag: ios

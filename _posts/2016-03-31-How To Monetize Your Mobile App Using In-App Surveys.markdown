@@ -3,8 +3,8 @@ layout: post
 title: How To Monetize Your Mobile App Using In-App Surveys
 date:  2016-03-31 13:22:11
 categories: Monetization
-description:Mobile monetization is one of the key issues app developers face in today’s mobile world. As apps’ visibility become more and more hard, developers are looking for new effective ways to monetize their apps through different monetization strategies.
-image: {{site.baseurl}}/images/monetization/surv.jpg
+image: "images/monetization/surv.jpg"
+description: Mobile monetization is one of the key issues app developers face in today’s mobile world. As apps’ visibility become more and more hard, developers are looking for new effective ways to monetize their apps through different monetization strategies.
 tag: monetization
 comments: true
 ---

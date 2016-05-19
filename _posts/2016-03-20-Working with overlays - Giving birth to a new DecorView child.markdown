@@ -2,6 +2,9 @@
 layout: post
 title: Working with overlays - Giving birth to a new DecorView child
 date:  2016-03-20 09:15:20
+header-img: "images/android/after4.png"
+image: "images/android/after4.png"
+description: Following up the series of previous articles on how to create overlays on Android we will study in this post how to add an overlay over an Activity. We will do that by traversing it’s current view hierarchy and injecting directly a RelativeLayout below window’s DecorView. This RelativeLayout will hold the overlay layout, along with the original layout of the Activity that is already in place. 
 categories: Android 
 tag: android
 comments: true

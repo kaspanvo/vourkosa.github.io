@@ -2,6 +2,7 @@
 layout: post
 title: How to build an iOS framework with bitcode support, keeping backwards compatibility
 date:  2016-04-14 10:21:11
+description: When creating our own iOS framework, after the release of XCode 7 we needed to start supporting bitcode. For those not familiar with bitcode, bitcode is an intermediate representation of a compiled program and is part of the App Thinning feature introduced in XCode 7. With Bitcode, apps can be re-optimized for each device before being delivered to a user. You can read more on this on Apple docs <a href="https://developer.apple.com/library/tvos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html" target="_blank">here.</a>
 categories: iOS 
 tag: ios
 comments: true

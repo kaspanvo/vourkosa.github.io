@@ -2,6 +2,9 @@
 layout: post
 title:  Making an app survive in Android’s ocean
 date:   2016-03-17 11:22:12
+header-img: "images/monetization/google_vest.png"
+image: "images/monetization/google_vest.png"
+description: As apps’ visibility becomes more and more difficult, app developers are working hard to make their apps stand out among thousands of new apps appearing every day. There is a big variety of articles out there on how to increase an app’s discoverability through ASO techniques, marketing campaigns and others.  What is most important, though? Spend on ad marketing campaigns? Creating press releases, or dive into Google Play mechanisms to understand and position better an app on store? Anyone could argue that app developers should be doing all of that anyway…this is so true, but where should be their main focus?
 categories: Monetization
 tag: monetization
 comments: true

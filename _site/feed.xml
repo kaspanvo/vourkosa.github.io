@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.1">Jekyll</generator>
 <link href="http://vourkosa.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://vourkosa.github.io/" rel="alternate" type="text/html" />
-<updated>2016-05-19T12:05:30+03:00</updated>
+<updated>2016-05-19T12:36:45+03:00</updated>
 <id>http://vourkosa.github.io/</id>
 <subtitle>This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
 </subtitle>
@@ -162,7 +162,7 @@ task makeJar(type: Jar) {
     &lt;p&gt;JAR solution that includes resources can be problematic in several cases. For those that work with other platforms and tools a good example can be how Unity handled JAR files with resources prior Unity 5. In Unity 4 for example when building a plugin for a JAR file you needed to include library’s resources under Assets/Plugins/Android/res/raw in order for the library to be able to read them. The suggested solution above could not work and all library resources should be extracted outside the jar file. Since Unity 5 and the introduction of &lt;a href=&quot;http://docs.unity3d.com/Manual/PluginInspector.html&quot; target=&quot;_blank&quot;&gt; PluginInspector&lt;/a&gt; even the aforementioned approach would not work any more and AAR format was somehow forced for libraries with resources.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;This is definitely not the way to go since it creates memory issues. You should only use this if there is no other way around. You can read more on that in an interesting blog &lt;a href=&quot;http://blog.danlew.net/2013/08/20/joda_time_s_memory_issue_in_android/&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt; by Dan Lew.&lt;/p&gt;
+    &lt;p&gt;This is definitely not the way to go since it creates memory issues. You should only use this if there is no other way around. You can read more on the issue and a workaround in a blog &lt;a href=&quot;http://blog.danlew.net/2013/08/20/joda_time_s_memory_issue_in_android/&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt; by Dan Lew.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </content>

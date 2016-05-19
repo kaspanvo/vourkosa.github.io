@@ -3,6 +3,9 @@ layout: post
 title: Sharing Android libraries as JARs - Including and reading image resources
 date:  2016-04-06 10:16:20
 categories: Android 
+header-img: "images/android/mylibrary.png"
+image: "images/android/mylibrary.png"
+description: When deciding to create a library that will be distributed publicly among the developer ecosystem you need to consider in which format you will expose it to the community.
 tag: android
 comments: true
 ---
@@ -108,4 +111,4 @@ The approach described above is just a workaround on how to include and retrieve
 
 1. JAR solution that includes resources can be problematic in several cases. For those that work with other platforms and tools a good example can be how Unity handled JAR files with resources prior Unity 5. In Unity 4 for example when building a plugin for a JAR file you needed to include library's resources under Assets/Plugins/Android/res/raw in order for the library to be able to read them. The suggested solution above could not work and all library resources should be extracted outside the jar file. Since Unity 5 and the introduction of <a href="http://docs.unity3d.com/Manual/PluginInspector.html" target="_blank"> PluginInspector</a> even the aforementioned approach would not work any more and AAR format was somehow forced for libraries with resources.
 
-2. This is definitely not the way to go since it creates memory issues. You should only use this if there is no other way around. You can read more on that in an interesting blog <a href="http://blog.danlew.net/2013/08/20/joda_time_s_memory_issue_in_android/" target="_blank">post</a> by Dan Lew. 
+2. This is definitely not the way to go since it creates memory issues. You should only use this if there is no other way around. You can read more on the issue and a workaround in a blog <a href="http://blog.danlew.net/2013/08/20/joda_time_s_memory_issue_in_android/" target="_blank">post</a> by Dan Lew. 

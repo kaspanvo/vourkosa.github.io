@@ -3,10 +3,185 @@
 <generator uri="http://jekyllrb.com" version="3.0.1">Jekyll</generator>
 <link href="http://vourkosa.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://vourkosa.github.io/" rel="alternate" type="text/html" />
-<updated>2016-05-19T12:53:43+03:00</updated>
+<updated>2016-05-19T14:28:16+03:00</updated>
 <id>http://vourkosa.github.io/</id>
 <subtitle>This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
 </subtitle>
+<entry>
+<title>Rewarded Surveys - The Answer To An App Publisher’s Revenue Prayers?</title>
+<link href="http://vourkosa.github.io/monetization/2016/05/17/Rewarded-Surveys-The-Answer-To-An-App-Publisher-s-Revenue-Prayers.html" rel="alternate" type="text/html" title="Rewarded Surveys - The Answer To An App Publisher’s Revenue Prayers?" />
+<published>2016-05-17T13:12:26+03:00</published>
+<updated>2016-05-17T13:12:26+03:00</updated>
+<id>http://vourkosa.github.io/monetization/2016/05/17/Rewarded Surveys-The Answer To An App Publisher’s Revenue Prayers</id>
+<content type="html" xml:base="http://vourkosa.github.io/monetization/2016/05/17/Rewarded-Surveys-The-Answer-To-An-App-Publisher-s-Revenue-Prayers.html">&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/rewarded.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finding ways to monetize a mobile app is the Holy Grail of app publishers. Ad networks and mobile publishers are constantly defining new and creative ways to maximize monetization. Rewarded videos are at the forefront of the latest creative shift, designed around an in-app economy. But the new kid on the block, Rewarded surveys, might cut their reign on the app monetization kingdom short.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rewarded videos&lt;/strong&gt; are a great way to offer users an incentive to stay engaged in-app, while publishers are earning more ad revenue. The reward generally comes in the form of in-game currency (gold, coins, power-ups) or any form of premium content, and is distributed to the user after a successful video completion. A recent study reveals that rewarded videos are the hottest revenue generator chosen by app publishers at the moment, as well as one of the most widely accepted formats from app users.&lt;/p&gt;
+
+&lt;p&gt;But simply showing a video that leads to an app install campaign can get quite predictable.   The point is to find a way to present to users something more interactive, with full opt-in control, thus maintaining a balance between desired ad engagement and user experience. Here is where Rewarded Surveys come into play, cutting short the reign of rewarded videos in the app monetization kingdom.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/eggs.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rewarded surveys&lt;/strong&gt; are modified short market research surveys designed for mobile, that users opt-in to participate in order to be granted premium content such as coins or credits. Users, upon successful completion of the survey, are rewarded in various ways, similarly to rewarded videos. Market research surveys are the stock in trade for gathering any sort of market information. The aim is to gather information from a small sample of a market in order to predict what the whole market wants. Rewarded surveys are a great tool for a variety of businesses, helping them understand their customer’s habits and likes &amp;amp; dislikes, get product feedback, measure brand awareness, gather consumer insights. Any business, be it large corporations or SMEs, needs data about their target customer, so they don’t have to rely on guesswork and gut instinct.&lt;/p&gt;
+
+&lt;h2&gt;Rewarded Surveys &amp;amp; Rewarded Videos&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;{{ site.baseurl }}/images/monetization/luct.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rewarded videos can be a high converting solution for publishers, with rewarded surveys working alongside them, to add an extra revenue stream to a mobile app. The two formats can be used in sync, working hand in hand to achieve the end target, i.e. increased revenue. There is no need for the app developer to chose which one to use, giving two solutions to one problem. The end result is maximum coverage in any gaps in fill rates that may be present.&lt;/p&gt;
+
+&lt;p&gt;Rewarding users to complete tasks can be really beneficial for app publishers for a number of reasons: it is a great way to monetize non-payers – the vast majority of users in a mobile app; and it encourages users to stay engaged in the parent app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/survey_vs_video.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A recent &lt;a href=&quot;https://www.fusepowered.com/blog/2015/06/case-study-rewarded-video-and-iaps/&quot; target=&quot;_blank&quot;&gt;study&lt;/a&gt; by FusePowered, carried out in over 6M players in their network aimed to conclude whether or not engagement with rewarded ads has a positive or negative effect on conversion and revenue. The study indicates that any preconceptions one might have about losing IAP revenue from users stocking up on premium currency through rewarded video have no basis. In fact, six times more players made an IAP after watching a reward video than those who did not.
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2&gt;Sounds perfect right? But who said you cannot improve on perfection?&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rewarded surveys are climbing on the list of preferred ad formats available to users. A recently conducted survey by Pollfish was carried out on approximately 1200 mobile app users in the USA, asking them their opinion on &lt;strong&gt;&lt;em&gt;why they prefer surveys to traditional ads&lt;/em&gt;&lt;/strong&gt;, revealing several interesting answers:&lt;/p&gt;
+
+&lt;h3&gt;7 reasons you should switch to rewarded surveys today&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;{{ site.baseurl }}/images/monetization/earn.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;1. Interactive/Fun:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“Surveys are fun!”&lt;/li&gt;
+&lt;li&gt;“I tend to ignore ads but surveys are more interactive, so I like them.”&lt;/li&gt;
+&lt;li&gt;“Because it gives me something to do instead of waiting for the ad to finish.”&lt;/li&gt;
+&lt;li&gt;“I love to read and answer surveys.”&lt;/li&gt;
+&lt;li&gt;“It’s like a game, I am engaged in the process.”&lt;/li&gt;
+&lt;li&gt;“Is less boring than watching ads.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Surveys are an interactive format of monetization, requiring user input. This process brings engagement and is fun after all! All users can do with rewarded videos, is watch, or “pretend to watch” until the end.&lt;/p&gt;
+
+&lt;h3&gt;2. User-centric/Personal:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“Surveys are more focused on individual.”&lt;/li&gt;
+&lt;li&gt;“I could give MY opinion with answering surveys”&lt;/li&gt;
+&lt;li&gt;“Surveys can be relevant to my life”&lt;/li&gt;
+&lt;li&gt;“I feel like my opinion is valued.”&lt;/li&gt;
+&lt;li&gt;“It involves me.”&lt;/li&gt;
+&lt;li&gt;“Asks me what I like instead of telling me what to like.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Surveys require every user’s personal and unique opinion on a number of topics, making them user-centric. Survey results, when collected, are forwarded to marketers and companies looking to gather consumer insights and improve or form future or existing products and services. Users like the idea of contributing and having their voice being heard. As stated in one of the answers:&lt;/p&gt;
+
+&lt;div class=&quot;quote&quot; style=&quot;text-align:center;&quot;&gt; &lt;h5&gt;“A survey wants to know what I think, but ads think they know what I want.”&lt;/h5&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3&gt;3. Non-Repetitive/Unpredictable&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“Surveys are interesting, worth more, and non repetitive, you don’t have to watch and see the same ad a million times.. ”&lt;/li&gt;
+&lt;li&gt;“They keep repeating the same ads over and over, day after day. It gets boring after a while”&lt;/li&gt;
+&lt;li&gt;“The ads get old and answering surveys give us something different to do every time.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are times when it pays to be spontaneous. Users are not aware of the topic of the survey beforehand, nor do they get presented the same survey twice once completed! This sees high traction as users are not forced to aimlessly watch endless videos resulting to an app install prompt. Curiosity on what comes up next and what others have replied brings excitement and drives conversions and in-app engagement.&lt;/p&gt;
+
+&lt;h3&gt;4. Highly Rewarding&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“Surveys earn me more points.”&lt;/li&gt;
+&lt;li&gt;“Because answering a survey is not that bad for getting a pro upgrade for free.”&lt;/li&gt;
+&lt;li&gt;“More savings.”&lt;/li&gt;
+&lt;li&gt;“Because a survey offers more reward.”&lt;/li&gt;
+&lt;li&gt;“It’s more interactive and I can earn more points at a time.”&lt;/li&gt;
+&lt;li&gt;“Answering surveys pay well.”&lt;/li&gt;
+&lt;li&gt;“It saves me more money.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While rewarded videos have a higher payout than traditional ad formats, rewarded surveys pay even more, making them the number one choice in terms of payout both for the user and for the publisher.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/quotes.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;5. Faster and easier&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“Because its much easier and faster.”&lt;/li&gt;
+&lt;li&gt;“I hate having to wait for ads to finish.”&lt;/li&gt;
+&lt;li&gt;“More convenient.”&lt;/li&gt;
+&lt;li&gt;“It is a fun and relaxing way to spend your day.”&lt;/li&gt;
+&lt;li&gt;“Ads take too long and surveys take less time to finish.”&lt;/li&gt;
+&lt;li&gt;“Ads are annoying videos that seem like they go on forever.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Users find it way more convenient and faster to complete a survey and get a reward rather than waiting for a video to complete.&lt;/p&gt;
+
+&lt;h3&gt;6. Full opt-in control&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“I prefer to be in control and fill out the survey at my own speed.”&lt;/li&gt;
+&lt;li&gt;“Feels like a choice.”&lt;/li&gt;
+&lt;li&gt;“I can do a survey on my time and be more selective.”&lt;/li&gt;
+&lt;li&gt;“Choice of answering.”&lt;/li&gt;
+&lt;li&gt;“I feel there’s more control over what I see.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;User consent and control is very important, and rewarded surveys are paving the way for users by providing a non-intrusive, opt-in control. Users are provided with a clear exit button, and they can choose when to start or stop their survey, making this a less intrusive experience. The all-important balance between desired engagement and the user’s experience is thus well protected.&lt;/p&gt;
+
+&lt;h3&gt;7. It’s not more ads!&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“I hate ads!”&lt;/li&gt;
+&lt;li&gt;“Because I ignore the ads anyway.”&lt;/li&gt;
+&lt;li&gt;“Ads are really annoying and more common.”&lt;/li&gt;
+&lt;li&gt;“Ads make me violently angry.”&lt;/li&gt;
+&lt;li&gt;“Ads are stupid.”&lt;/li&gt;
+&lt;li&gt;“Ads drive me crazy.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is widely accepted in the users’ community that the marketplace needs a different ad format, less annoying, more interactive and tailor-made for the user. This is where surveys come into play.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/powerup.png&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2&gt;Get your timing right: Figure out the ideal time to show your survey&lt;/h2&gt;
+
+&lt;p&gt;Rewarded surveys are getting more popular every day with enticing experiences and ever increasing ROI. Deciding to incorporate a rewarded survey is a non-brainer, but here are a few points that will warrant you a winning monetization strategy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/epic2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Present Perfect: Where, When and What&lt;/h3&gt;
+
+&lt;p&gt;How often should you present your users with a rewarded survey? Where should you place your rewarded survey? Designing the placement and timing of your rewarded survey in such a way that it both entices the user into interacting with the survey, as well as ensuring the user finds it interesting and remains engaged in the app, are the cornerstones of succeeding with rewarded surveys. Here are some things to keep in mind:&lt;/p&gt;
+
+&lt;h3&gt;Where?&lt;/h3&gt;
+
+&lt;h4&gt;Storefront / Offer Wall&lt;/h4&gt;
+
+&lt;p&gt;This is the most common approach in the marketplace. Users decide to visit the storefront to purchase power-ups, coins etc. and that is when you offer them the option of completing a survey in exchange for a reward!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/wall.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4&gt;Upfront menu or Start of gameplay&lt;/h4&gt;
+
+&lt;p&gt;Instead of allowing the user to navigate through to the storefront section, they are shown a prompt that gives them instead the option to complete a survey and receive an initial boost or power up, prior to using the game or app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width: 250px; margin: auto;&quot; src=&quot;{{ site.baseurl }}/images/monetization/tips.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;When?&lt;/h3&gt;
+
+&lt;h4&gt;Game Progression&lt;/h4&gt;
+
+&lt;p&gt;Events during gameplay, such as running out of lives before the finish line can be monetized. Rewarded surveys at level failure may help users advance in the game and keep them playing longer. Personalized rewards following completion of a reward survey, based on whatever level the user is on, will keep them engaged and nudge them towards IAPs when the rewards run out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot; margin: auto;&quot; src=&quot;{{ site.baseurl }}/images/monetization/coins.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;What?&lt;/h3&gt;
+
+&lt;h4&gt;Unlock a feature or Upsell&lt;/h4&gt;
+
+&lt;p&gt;After you decide on the placement of your rewarded survey, you also need to decide what to reward the user with. Remember, it is not always about money!&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot; margin: auto;&quot; src=&quot;{{ site.baseurl }}/images/monetization/pro3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4&gt;Remove Ads&lt;/h4&gt;
+
+&lt;p&gt;Online ads are a major segment of the advertising industry, and they are getting more intrusive every day. Ads published, cluttering gaming/app experience, are increasing every year, at a staggering rate. Often, the only thing that ads lead to is irritation. Trying to avoid this, publishers looked into monetizing this frustration either with IAP or rewarded approach. Consider being given the option to complete a short survey and be rewarded with an ad-free app environment; who wouldn’t go for it?&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width: 250px; margin: auto;&quot; src=&quot;{{ site.baseurl }}/images/monetization/frog.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Rewarded surveys can be paired nicely with your existing monetization system, break the ice for freemium users, pay more and increase retention and conversion when used properly. And remember, users will always look for the easier, more interactive and higher payable solution in your app to keep going. This option is rewarded surveys!&lt;/p&gt;
+</content>
+<category term="monetization" />
+<summary></summary>
+</entry>
 <entry>
 <title>How to build an iOS framework with bitcode support, keeping backwards compatibility</title>
 <link href="http://vourkosa.github.io/ios/2016/04/14/How-to-build-an-iOS-library-with-Bitcode-support-and-keep-backwards-compatibility-with-XCode-6.html" rel="alternate" type="text/html" title="How to build an iOS framework with bitcode support, keeping backwards compatibility" />
@@ -1530,32 +1705,5 @@ Following up the wheel of fortune approach, a similar concept is including of wh
 </content>
 <category term="monetization" />
 <summary>In this blog post we will discuss about adjusting an app’s monetization strategy based on the location and market profile of its user base.</summary>
-</entry>
-<entry>
-<title>Monetizing upon the illusion of being part of something</title>
-<link href="http://vourkosa.github.io/monetization/2015/07/23/Monetizing-upon-the-illusion-of-being-part-of-something.html" rel="alternate" type="text/html" title="Monetizing upon the illusion of being part of something" />
-<published>2015-07-23T11:17:15+03:00</published>
-<updated>2015-07-23T11:17:15+03:00</updated>
-<id>http://vourkosa.github.io/monetization/2015/07/23/Monetizing-upon-the-illusion-of-being-part-of-something</id>
-<content type="html" xml:base="http://vourkosa.github.io/monetization/2015/07/23/Monetizing-upon-the-illusion-of-being-part-of-something.html">&lt;p&gt;It is widely accepted, that a very interesting need that thrives among people, is the need of being part of something, even if that thing is not tangible, nor something that users can actually benefit from somehow. Being able to apply such a concept around an app’s design, can leverage several monetization opportunities in the long run.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/team.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Build up a story&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;A good story built around an app, can bring excitement and engagement to the users. This story could be anything like solving an unsolvable problem, rescuing a princess, killing the bad guy, or even just creating a better content in a news or quiz app. Users that engage in such a story, can become loyal and addicted, and this can be a good opportunity for publishers in order to apply techniques discussed in previous articles. A good narration script describing a story during the on-boarding experience can be an example of this strategy. Users trying to follow that story, can be confronted later on with several scarcity monetization moments.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Align users with a bigger cause or vision&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;People tend to believe in a bigger cause or vision…or at least can easily get aligned with one.  We could initiate this discussion from religion but we do not have to go that deep. In the past, several techniques were used by publishers either on the web or mobile, in order to increase revenues by promoting contribution in common good or a general good cause. Creating a concept around an app that convinces users that usage of the app or its features, contributes towards a certain vision, even if there is no direct benefit for them, leverages several opportunities for the publishers.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Enable a community&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Enabling social characteristics in an app is something we have already discussed in previous posts. Humans, as social beings, constantly look to socialize with other people and be part of a community. Therefore, an interesting option that could be enabled by app publishers, is providing their app’s users with the option to interact or contribute. This contribution feature, is something known in the internet culture as the 1% rule. In such a  community, a part of users will contribute, others will monitor, some of them will explore and others will comment or give feedback. The establishment of such a community within an app, empowers engagement and can easily be used to drive revenue with several techniques.&lt;/p&gt;
-
-&lt;p&gt;To sum up, surrounding an app’s usage with a story or vision, or enabling community involvement, can be a good strategy for publishers that will help them later on when trying to apply monetization techniques. If app publishers are able to communicate any of these concepts effectively through their marketing efforts and especially during the on-boarding experience of the app, they can boost retention and commitment, as users will be trying to fulfil that story or vision and stay part of that higher meaning that surrounds the app. In such a strategy, monetization opportunities flourish as users are struggling to stay on track.&lt;/p&gt;
-</content>
-<category term="monetization" />
-<summary>It is widely accepted, that a very interesting need that thrives among people, is the need of being part of something, even if that thing is not tangible, nor something that users can actually benefit from somehow. Being able to apply such a concept around an app’s design, can leverage several monetization opportunities in the long run.</summary>
 </entry>
 </feed>

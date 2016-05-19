@@ -1,10 +1,34 @@
 
 	<head>
-		<title>Personal blog around mobile monetization, android and ios development</title>
+		<title>Mobile monetization, android, ios tips and anything around mobile</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Personal blog around mobile monetization, Android and iOS development and other things learned while developing mobile apps for both platforms." />
-		<meta name="keywords" content="android,monetization" />
+		<meta name="keywords" content="android, monetization, ios, surveys, sdk, mobile, apps, in-app" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		
+		
+		<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@vdaubry">
+{% if page.title %}
+  <meta name="twitter:title" content="{{ page.title }}">
+{% else %}
+  <meta name="twitter:title" content="{{ site.title }}">
+{% endif %}
+{% if page.url %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+{% endif %}
+{% if page.description %}
+  <meta name="twitter:description" content="{{ page.description }}">
+{% else %}
+  <meta name="twitter:description" content="{{ site.description }}">
+{% endif %}
+{% if page.header-img %}
+  <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
+{% endif %}
+		
+		
 		<script src="{{ site.baseurl }}/js/jquery.min.js"></script>
 		<script src="{{ site.baseurl }}/js/jquery.scrollzer.min.js"></script>
 		<script src="{{ site.baseurl }}/js/jquery.scrolly.min.js"></script>
@@ -25,7 +49,7 @@
 			<link rel="stylesheet" href="{{ site.baseurl }}/css/skel.css" />
 			<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
 			<link rel="stylesheet" href="{{ site.baseurl }}/css/style-xlarge.css" />
-<link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}" >
+			<link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}" >
 
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->

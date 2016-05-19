@@ -2,11 +2,30 @@
 <html>
     
 	<head>
-		<title>Personal blog around mobile monetization, android and ios development</title>
+		<title>Mobile monetization, android, ios tips and anything around mobile</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Personal blog around mobile monetization, Android and iOS development and other things learned while developing mobile apps for both platforms." />
-		<meta name="keywords" content="android,monetization" />
+		<meta name="keywords" content="android, monetization, ios, surveys, sdk, mobile, apps, in-app" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		
+		
+		<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@vdaubry">
+
+  <meta name="twitter:title" content="Sharing Android libraries as JARs - Including and reading image resources">
+
+
+  <meta name="twitter:url" content="http://vourkosa.github.io/android/2016/04/06/Sharing-code-among-Android-applications-Including-and-reading-images-from-jar-files.html">
+
+
+  <meta name="twitter:description" content="This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
+">
+
+
+		
+		
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery.scrollzer.min.js"></script>
 		<script src="/js/jquery.scrolly.min.js"></script>
@@ -27,7 +46,7 @@
 			<link rel="stylesheet" href="/css/skel.css" />
 			<link rel="stylesheet" href="/css/style.css" />
 			<link rel="stylesheet" href="/css/style-xlarge.css" />
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
 
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
@@ -117,22 +136,20 @@ apklib is a way to bundle an Android project and a way to share both code and re
 
 <p>Retrieving resources through R class could not be used since it would be replaced in compile time. Having that said we needed a way to retrieve our resources during runtime.</p>
 
-<h3>The solution</h3>
+<h3>The solution (not really*)</h3>
 
 <p>In order to workaround this problem, when creating our library’s JAR file, we created a folder (images/) and  placed there the icons we wanted to use.</p>
 
 <p><img src="/images/android/mylibrary.png" align="center" style="width: 250px; margin: 0 auto;" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">task</span> <span class="nf">makeJar</span><span class="p">(</span><span class="nl">type:</span> <span class="n">Jar</span><span class="o">)</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">task</span> <span class="nf">makeJar</span><span class="p">(</span><span class="nl">type:</span> <span class="n">Jar</span><span class="o">)</span> <span class="o">{</span>
  <span class="o">...</span>
     <span class="n">into</span><span class="o">(</span><span class="n">images</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">from</span> <span class="err">'</span><span class="n">drawables</span><span class="err">’</span>
            <span class="n">include</span> <span class="err">'</span><span class="o">*.</span><span class="na">png</span><span class="err">'</span>
     <span class="o">}</span>
  <span class="o">...</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+<span class="o">}</span></code></pre></figure>
 
 <p>and then when deciding to retrieve an image during runtime, we used ClassLoader class to access it:</p>
 
@@ -170,8 +187,14 @@ apklib is a way to bundle an Android project and a way to share both code and re
 <p><br /></p>
 <h4>P.S. Tips</h4>
 
-<p>JAR solution that includes resources can be problematic in several cases. For those that work with other platforms and tools a good example can be how Unity handled JAR files with resources prior Unity 5. In Unity 4 for example when building a plugin for a JAR file you needed to include library’s resources under Assets/Plugins/Android/res/raw in order for the library to be able to read them. The suggested solution above could not work and all library resources should be extracted outside the jar file. Since Unity 5 and the introduction of <a href="http://docs.unity3d.com/Manual/PluginInspector.html" target="_blank"> PluginInspector</a> even the aforementioned approach would not work any more and AAR format was somehow forced for libraries with resources.</p>
-
+<ol>
+  <li>
+    <p>JAR solution that includes resources can be problematic in several cases. For those that work with other platforms and tools a good example can be how Unity handled JAR files with resources prior Unity 5. In Unity 4 for example when building a plugin for a JAR file you needed to include library’s resources under Assets/Plugins/Android/res/raw in order for the library to be able to read them. The suggested solution above could not work and all library resources should be extracted outside the jar file. Since Unity 5 and the introduction of <a href="http://docs.unity3d.com/Manual/PluginInspector.html" target="_blank"> PluginInspector</a> even the aforementioned approach would not work any more and AAR format was somehow forced for libraries with resources.</p>
+  </li>
+  <li>
+    <p>This is definitely not the way to go since it creates memory issues. You should only use this if there is no other way around. You can read more on that in an interesting blog <a href="http://blog.danlew.net/2013/08/20/joda_time_s_memory_issue_in_android/" target="_blank">post</a> by Dan Lew.</p>
+  </li>
+</ol>
 
         
         </section>

@@ -2,6 +2,9 @@
 layout: post
 title:  Monetizing upon unpredictability and variety of rewards
 date:   2015-10-15 08:17:15
+header-img: "images/monetization/rewards7.jpg"
+image: "images/monetization/rewards7.jpg"
+description: The influence of unpredictability and variety of rewards can be seen in many aspects of a human’s every day life and can drive behaviour towards specific actions. This technique had been deeply studied in the early 50’s and was successfully applied in video games the years that followed, proving that it can also be a great drive of monetization for mobile games or apps if properly embedded in the initial game or app’s design.
 categories: Monetization
 tag: monetization
 comments: true

@@ -2,6 +2,9 @@
 layout: post
 title:  Monetizing upon scarcity, exclusiveness and uniqueness
 date:   2015-03-16 14:37:44
+header-img: "images/monetization/scarcity.png"
+image: "images/monetization/scarcity.png"
+description: There are a lot of things app developers can monetize around an app user but nothing compares with monetizing upon user feelings.
 categories: Monetization
 tag: monetization
 comments: true

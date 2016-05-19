@@ -2,6 +2,9 @@
 layout: post
 title:  Monetizing upon user impatience
 date:   2015-03-27 14:37:44
+header-img: "images/monetization/social1.png"
+image: "images/monetization/social1.png"
+description: In our last article we discussed about monetizing upon user feelings and in particular around scarcity, uniqueness and exclusiveness. Today we are going deeper around scarcity and we will discuss upon monetizing around user impatience.
 categories: Monetization
 tag: monetization
 comments: true

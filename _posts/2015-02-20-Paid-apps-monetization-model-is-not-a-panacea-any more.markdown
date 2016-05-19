@@ -2,6 +2,9 @@
 layout: post
 title:  Paid apps monetization model is not a panacea any more
 date:   2015-02-20 14:37:44
+header-img: "images/monetization/paid_apps.png"
+image: "images/monetization/paid_apps.png"
+description: Are app users abandoning the classic buy/sell concept of paid model? Are paid apps on life support? Why do most top titles on app stores, follow the freemium rather than the paid model?
 categories: Monetization
 tag: monetization
 comments: true

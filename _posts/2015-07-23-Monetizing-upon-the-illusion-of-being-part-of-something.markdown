@@ -2,6 +2,9 @@
 layout: post
 title:  Monetizing upon the illusion of being part of something
 date:   2015-07-23 08:17:15
+header-img: "images/monetization/team.png"
+image: "images/monetization/team.png"
+description: It is widely accepted, that a very interesting need that thrives among people, is the need of being part of something, even if that thing is not tangible, nor something that users can actually benefit from somehow. Being able to apply such a concept around an app’s design, can leverage several monetization opportunities in the long run.
 categories: Monetization
 tag: monetization
 comments: true

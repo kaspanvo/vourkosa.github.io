@@ -3,6 +3,9 @@ layout: post
 title:  Introduction to mobile app monetization
 date:   2015-02-17 10:15:20
 categories: Monetization
+header-img: "images/monetization/two_users.png"
+image: "images/monetization/two_users.png"
+description: Today we are launching a new column around mobile app monetization with several tips and insights on how to define an efficient mobile app monetization strategy based on the experience we gained so far by running our own monetization network…Pollfish. During the last two years and through our daily interaction with developers and the apps’ ecosystem we have seen a lot including several mistakes, bad and good practises and strategies .
 tag: monetization
 comments: true
 ---

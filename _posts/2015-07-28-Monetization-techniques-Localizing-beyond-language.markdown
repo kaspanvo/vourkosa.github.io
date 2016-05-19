@@ -2,6 +2,9 @@
 layout: post
 title:  Monetization techniques – Localizing beyond language
 date:   2015-07-28 08:17:15
+header-img: "images/monetization/local1.png"
+image: "images/monetization/local1.png"
+description: In this blog post we will discuss about adjusting an app’s monetization strategy based on the location and market profile of its user base.
 categories: Monetization
 tag: monetization
 comments: true

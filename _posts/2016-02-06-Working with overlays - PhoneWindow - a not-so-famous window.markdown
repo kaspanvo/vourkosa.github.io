@@ -2,6 +2,9 @@
 layout: post
 title: Working with overlays - PhoneWindow, a not-so-famous window
 date:  2016-02-06 10:16:20
+header-img: "images/android/with_overlay_content.png"
+image: "images/android/with_overlay_content.png"
+description: In this article we will discuss how we can create an overlay view above an Activity with the help of PhoneWindow and its inner class DecorView.
 categories: Android 
 tag: android
 comments: true
@@ -171,7 +174,8 @@ In our previous example if we do not explicitly ask to setContentView  we will g
 <img src="{{ site.baseurl }}/images/android/with_content.png">
 
 
-</br>
+<br/>
+
 <h3>Adding an overlay view layout</h3>
 
 So can we add or remove an overlay layout view in our Activity's window using content views? 

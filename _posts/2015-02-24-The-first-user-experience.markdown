@@ -2,6 +2,9 @@
 layout: post
 title:  The first user experience
 date:   2015-02-24 18:45:20
+header-img: "images/monetization/first_exp.png"
+image: "images/monetization/first_exp.png"
+description: Planning a monetization strategy upfront, is a key point towards an app’s monetization success. Including in this strategy a proper handling of user’s first experience, during the on-boarding process of the app, is quite important.
 categories: Monetization
 tag: monetization
 comments: true

@@ -2,6 +2,9 @@
 layout: post
 title:  Working with overlays - Life under WindowManager
 date:   2016-01-15 10:15:20
+header-img: "images/android/overlay_processes.png"
+image: "images/android/overlay_processes.png"
+description: This is the start of a series of articles regarding creating and using overlays on Android.  An overlay is a view that is placed above other views.  Such views can be created on Android with several different ways and for different purposes.
 categories: Android 
 tag: android
 comments: true

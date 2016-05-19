@@ -2,6 +2,9 @@
 layout: post
 title:  Monetizing upon social competitiveness and acknowledgment
 date:   2015-03-31 14:37:44
+header-img: "images/monetization/social4.png"
+image: "images/monetization/social4.png"
+description: Following up the latest blog posts about monetizing around user feelings, today we are going to discuss about monetizing around social behaviour.
 categories: Monetization
 tag: monetization
 comments: true

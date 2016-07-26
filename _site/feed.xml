@@ -3,10 +3,333 @@
 <generator uri="http://jekyllrb.com" version="3.0.1">Jekyll</generator>
 <link href="http://vourkosa.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://vourkosa.github.io/" rel="alternate" type="text/html" />
-<updated>2016-05-19T14:28:16+03:00</updated>
+<updated>2016-07-26T16:02:22+03:00</updated>
 <id>http://vourkosa.github.io/</id>
 <subtitle>This is my personal blog. I will regularly post here articles around monetization or android tricks. Opinions expressed here are of my own
 </subtitle>
+<entry>
+<title>Mobile Monetization Glossary – Back to basics</title>
+<link href="http://vourkosa.github.io/monetization/2016/07/26/Mobile-Monetization-Glossary-Back-to-basics.html" rel="alternate" type="text/html" title="Mobile Monetization Glossary – Back to basics" />
+<published>2016-07-26T16:11:21+03:00</published>
+<updated>2016-07-26T16:11:21+03:00</updated>
+<id>http://vourkosa.github.io/monetization/2016/07/26/Mobile Monetization Glossary – Back to basics</id>
+<content type="html" xml:base="http://vourkosa.github.io/monetization/2016/07/26/Mobile-Monetization-Glossary-Back-to-basics.html">&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/glossary.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Getting introduced to the mobile app monetization world can be quite difficult and confusing nowadays with the overflow of terminologies that a new app publisher may has to get familiar with. Going back to the beginning, we will try to list some basic terminologies widely used in mobile monetization and mobile advertising in general, in order to provide a better understanding to newcomers.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Types of networks&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;In the monetization landscape you will meet different type of networks that get involved at different parts of the monetization process.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mobile Ad network&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An ad network connects advertisers with app publishers who wish to host ads within their apps. Its key functionality is to match advertising space provided by a publisher, to advertising demand. An ad network usually gets access to a publisher’s ad space through an SDK, an API integration.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mobile Survey network&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A survey network connects market research companies and brands with app publishers who wish to host surveys within their apps. Its key functionality is to find the right respondents for surveys on the platform, as provided by the publisher. A survey network usually gets access to a publisher’s app through an SDK, or an API integration.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mobile Affiliate network&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An affiliate network acts as a middleman. It sells or buys mobile ad space on behalf of other third parties. They are mainly aggregators of different types of traffic that they try to optimise and work on a performance base.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mobile Mediation network&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A mediation network allows the organisation of ad networks by providing transparency on the available demand sources through a centralized platform. With the use of mediation, publishers can optimize networks within their apps based on different data like fill rate, eCPM, CTR and filter out using different options like geos,  device types etc in order to optimize to highest paying ad demand for their ad space.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Types of integration&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;There are different ways an app publisher can integrate a monetization network. Below we list the 3 most widely used.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SDK&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A Software Development Kit (SDK) is a set of software development tools that help developers create new software. An SDK by a monetization network usually allows the allocation of ad or survey space for an app, or enriches its functionality to allow monetization of the relevant app.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;API&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An Application Programming Interface (API) defines how software components should interact with each other. This kind of integration is usually used by ad networks to establish a communication of a server side software component with a publisher’s ad space.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tag&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A tag integration is a piece of code that is placed by app publishers to their mobile websites or webviews in order to be able to sell their ad space. It consists of url and a piece of html or javascript code and is partially defined by an API.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Types of Monetization Units&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;When a publisher decides to integrate a monetization network he is usually presented with several different types of monetization units. Below you can see some of the most popular ones.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Banner&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Banners are ads placed in rectangle units of predefined dimensions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Interstitial&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Interstitials are full screen or big popup ads that are usually placed between transition points within or while entering or exiting a mobile app (e.g. the change of a game level, app launch, app exit and others)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Offer Wall&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An offer wall is a monetization format where users are prompted with a full screen landing page wall of targeted offers that provide users with virtual items/credits/features or levels unlocks in exchange for registration, downloads or others.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lock-screen ads&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lock screen ads are ads rendered on the lock screen of an app. Usually a user may decide whether or not to engage with that ad or unlock his/her phone.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Videos Ads&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Video ads (Skippable or Non-Skippable) are usually full screen video ads that are rendered in a similar approach to interstitials.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rewarded Video Ads&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;With rewarded video ads, users are incentivised with a reward for watching a video until the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Surveys&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Surveys are a monetization unit where users are shown a survey and asked to share their opinion.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rewarded surveys&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;With rewarded surveys, users are incentivised with a reward for completing a survey until the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Native Ads&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ads blended with app’s native user experience to match feel and flow of an app, minimising user interruption.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;House Ads&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ads created by a publisher to promote another app of the same publisher.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rich Media Ads&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Rich media ad units are interactive or animated ad components (like a mini game, or a video)&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Monetization Strategies&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;When deciding to monetize an app, a publisher has to choose between a variety of monetization strategies.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Paid&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Used to refer to a monetization strategy where an app is provided as a paid app.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Freemium&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is the combination of “free” and “premium” and is used in apps world to refer to a strategy where an app is provided for free but offers also in-app paid options like virtual goodies, ad removal etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In-app advertising&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In-app advertising model refers to the strategy where an app is provided for free but includes advertisement in order to generate revenue for the publisher. It is usually included in the general freemium category.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Paidmium&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is the combination of “paid” and “freemium”. This blended model refers to a monetization strategy where an app is provided as a paid app but also provides in-app purchase options and/or ads to increase revenue streams for the publisher.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Subscription&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The subscription model provides an app for free, however users are allowed to login and use that app and its full functionality by paying a monthly fee.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;User Identifiers&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;In mobile advertising users can be tracked in several different ways. Some of them include:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Advertising Identifier or IDFA&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An advertising identifier (Android) or IDFA (iOS) is a temporary/ resettable device identifier that identifies a user across apps, mainly used for delivering interest based ads (as enforced by Google and Apple policies).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Cookies&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cookies are a small piece of data (text file) stored in a user’s web browser, while the user is browsing. That data is used to recall information about the user in future sessions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Payment terms&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Net X&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The amounts of days (X) that must pass by, until the monetization network sends the payment to the publisher for his previous month’s earnings(can be week, day etc - depends on network’s payment cycle) .&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Campaign revenue models&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;There are several revenue performance metrics/models out there that define the relationship of a publisher with a monetization network. Each monetization network follows a different model and publishers usually choose their networks depending on which model best works for them, based on the context of their app.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPC&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cost-per-click (CPC) is a payment metric describing the amount of revenue paid to a publisher for each ad unit that is being clicked. This amount is specified by the advertiser.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPA&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cost-per-acquisition or cost-per-action (CPA) is a model where a publisher gets paid for a completed action. This action can be anything like a form submit, install of an app, completion of a survey etc. Price to be paid for each action is predefined by the advertiser.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cost-per-mile (CPM) is a model where a publisher gets paid per thousand ad impressions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cost-per-install (CPI) is a model where a publisher gets paid if a user installs and uses an app through an advertisement from the publisher’s app.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPV&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cost-per-View (CPV) is a model where publisher gets paid after viewing an ad (for example a video).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CPCV&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cost-per-Completed-View (CPCV) is a model where publisher gets paid after a successful view of an ad (for example watching a video until the end).&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;App metrics&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;K factor&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;K factor is a metric to measure the virality of an app.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula: No. of invites &lt;/em&gt;&lt;strong&gt;X &lt;/strong&gt;&lt;em&gt;Percentage of conversions from invites&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Active user&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A user is considered active if he has opened the app within a provided timeframe.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DAU &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Daily-Active-Users (DAU) refers to the number of users per day. This metric is used to measure user engagement and retention.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UDAU&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Unique-Daily-Active-Users (UDAU) refers to unique number of users per day. This metric is used to measure user engagement and retention.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MAU&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Monthly-Active-Users (MAU) refers to number of users per month. This metric is used to measure user engagement and retention.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UMAU&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Unique-Monthly-Active-Users (UMAU) refers to the number of unique users per month. This metric is used to measure user engagement and retention.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ARPU&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Average-Revenue-Per-User (ARPU), as its name states, is a really good metric to measure the performance of a monetization strategy.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula: Total revenue / No of users&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ARPDAU or ARPU-DAU&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Average-Revenue-Per-Daily-Active-Users (ARPDAU), as its name states, calculates average revenue per daily active user.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula: Total revenue / No of daily active users&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ARPPU&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Average-Revenue-Per-Paying-Active-Users (ARPPU) calculates the average revenue per user after users have been converted to paying customers.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula: Total revenue / No of paying users&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;LTV&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Life-Time-Value of a user in an app reflects the revenue accumulated by a single user while staying and interacting with the app during a predefined period of time.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Network Metrics&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Several metrics are used to calculate a network’s performance. Some of them include:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fill rate&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Refers to the number of times an ad was available compared to the number of times it was requested.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula(%): No of ads received/ No of ads requested &lt;/em&gt;&lt;strong&gt;X &lt;/strong&gt;&lt;em&gt;100&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;eCPM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;estimated-Cost-Per-Mile (eCPM). In advertising it refers to the estimated cost per thousand ad impressions.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula&lt;em&gt;(%)&lt;/em&gt;: Total revenue/ No of ad impressions &lt;/em&gt;&lt;strong&gt;X &lt;/strong&gt;&lt;em&gt;1000&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conversion rate&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Refers to the number of users performing a desired action (for example installing an app or completing a survey).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula&lt;em&gt;(%)&lt;/em&gt;: No of users that took an action/ No of ad impressions &lt;/em&gt;&lt;strong&gt;X &lt;/strong&gt;&lt;em&gt; 100&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Geos&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Usually used along with fill rate metric to refer to top geographical areas where the network has good fill rates in terms of ad inventory.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Campaign Metrics&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;There are several ways to measure the effectiveness of a campaign. Below are some key metrics used.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CTR&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click-Through-Rate (CTR) refers to the ratio of clicks on ad impressions. Used to determine the performance of an ad campaign.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Formula (%): Total clicks/ No of ad impressions &lt;/em&gt;&lt;strong&gt;X &lt;/strong&gt;&lt;em&gt;100&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ROI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Return-Of-Investment (ROI) describes the eventual benefits of an ad campaign compared to its cost.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Impression&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A metric defining of how many times an ad was shown.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conversion Tracking&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Conversion tracking is the tracking of specific events or actions though an app and is used by advertisers to measure the performance of their campaigns. These events or actions are defined by the advertiser as the campaign goals.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Other terms&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Latency&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Latency describes the delay (time difference) between a request for an ad and the response time for that. In general, it refers to the lag for displaying an ad.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Frequency capping&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is the process of limiting ad serving to a user based on a specific number of views, clicks or other actions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mediation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is the management and optimization of ad serving from different ad networks through a single interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Retargeting&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is the process of targeting a user based on his previous actions/history.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In-app purchase&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is the process of buying enchased functionality, virtual goods or something else within an app.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Inventory&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Inventory is the available advertising space provided by a publisher. It can also be used by advertisers to describe the available ads they have from clients.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;User acquisition&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;User acquisition is the process of getting users to download an app or get/read or use a publisher’s content.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bot farm&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bot farms in mobile advertising refer to fake mobile accounts that are used to drive big number of downloads of an app in order to affect the app’s ranking on relevant stores. This is a black hat practice and is banned from all major app stores.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Programmatic&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Programmatic is the use of software to automate the process of negotiating, purchasing and selling of advertising.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DMP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A Data Management Platform (DMP) is a data warehouse responsible for collecting, analysing, managing and integrating large volumes of structured or unstructured data. DMPs are really useful for optimising ad campaigns by providing data needed to effectively target those campaigns.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DSP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A Demand Side Platform (DSP) is a system that allows marketers, advertisers or agencies, buy advertising inventory through multiple ad exchangers within one single interface. DSPs facilitate buyers with RTB access across multiple sources of ad inventory. With the help of DSPs, efficient buying and tracking of ad inventory takes place by utilisation of data that helps marketers reach the most relevant audience with their bids.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A Supply Side Platform (SSP) is a automated system that allows publishers to maximise their revenue by exposing and eventually selling their ad space to multiple potential buyers/bidders. An SSP is the equivalent of DSP on the publisher’s side. SSPs allow publishers to connect their ad inventory to multiple ad exchangers and sell their ad space at the highest price.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RTB&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Real Time Bidding (RTB) is the process where ad inventory is bought and sold simultaneously in an automated way through programmatic means. During RTB, auctions take place where ad space provided by publishers is being sold to advertisers that offer the highest price during the automated action.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ad Exchange&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An ad exchange is a marketplace where publishers make available/publish their ad space inventory and marketers and advertisers bid and buy the most relevant space for them through real time auctions. DSPs decide automatically which of these impressions are most suitable for an advertiser to buy. The price of each impression is finalised through real time bidding. Ad exchange marketplaces provide efficiency and transparency, enabling advertisers to purchase ad impressions that are most cost-effective and relevant, while publishers are able to sell their ad space to the highest price.&lt;/p&gt;
+</content>
+<category term="monetization" />
+<summary></summary>
+</entry>
 <entry>
 <title>Rewarded Surveys - The Answer To An App Publisher’s Revenue Prayers?</title>
 <link href="http://vourkosa.github.io/monetization/2016/05/17/Rewarded-Surveys-The-Answer-To-An-App-Publisher-s-Revenue-Prayers.html" rel="alternate" type="text/html" title="Rewarded Surveys - The Answer To An App Publisher’s Revenue Prayers?" />
@@ -1670,40 +1993,5 @@ Following up the wheel of fortune approach, a similar concept is including of wh
 </content>
 <category term="monetization" />
 <summary>The influence of unpredictability and variety of rewards can be seen in many aspects of a human’s every day life and can drive behaviour towards specific actions. This technique had been deeply studied in the early 50’s and was successfully applied in video games the years that followed, proving that it can also be a great drive of monetization for mobile games or apps if properly embedded in the initial game or app’s design.</summary>
-</entry>
-<entry>
-<title>Monetization techniques – Localizing beyond language</title>
-<link href="http://vourkosa.github.io/monetization/2015/07/28/Monetization-techniques-Localizing-beyond-language.html" rel="alternate" type="text/html" title="Monetization techniques – Localizing beyond language" />
-<published>2015-07-28T11:17:15+03:00</published>
-<updated>2015-07-28T11:17:15+03:00</updated>
-<id>http://vourkosa.github.io/monetization/2015/07/28/Monetization-techniques-Localizing-beyond-language</id>
-<content type="html" xml:base="http://vourkosa.github.io/monetization/2015/07/28/Monetization-techniques-Localizing-beyond-language.html">&lt;p&gt;In this blog post we will discuss about adjusting an app’s monetization strategy based on the location and market profile of its user base.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/local1.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Considering to localize an app’s content when deciding to expand to different markets it’s a key point to its success and adoption. However, moving one step further and adjusting the monetization strategy of the app, based on location and characteristics of the addressed market, can be the “make or break” factor of this app’s performance in its revenue charts!&lt;/p&gt;
-
-&lt;p&gt;One size does not fit all. We have already discussed this in previous posts. Segmenting the user base of an app and applying different monetization techniques based on the profile of each group can be really rewarding. One of the major groups that can be used and applied in a monetization strategy, is around localisation.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Dynamic monetization model&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;In App Annie and IDC latest &lt;a href=&quot;http://go.appannie.com/mobile-app-advertising-and-monetization-trends-2013-2018/&quot; target=&quot;_blank&quot;&gt;report&lt;/a&gt; regarding mobile app revenue composition across iOS App Store and Google Play, we may see that each market reacts differently in mobile revenue models applied.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ site.baseurl }}/images/monetization/local2.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For example, in India, in-app advertising works much better than in-app purchases while in Japan we see the exact opposite. This trend could be happening for several reasons, it could be a cultural thing, a matter of standard of living or even a practical thing like the absence of support for widely used payments methods. Therefore, it would be wise for app publishers to study the markets they’re getting into and adjust their monetization strategies accordingly. Having a dynamic monetization strategy can be really beneficial. App publishers for example, can provide in-app purchases for users in Japan while dynamically changing to in-app advertising model for users in India. This way the publisher can make the maximum out of his app’s user base since the monetization model will be adjusted to the special characteristics of each market.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Dynamic pricing&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Differences in each market can be applied effectively in the pricing model too. For example in US, $3.99 for an in-app purchase may not be too much for the users of an app, but for Indian users this price may be way too much. Having that said, what app publishers can do to overcome this, is to create different tiers of pricing within their apps for different countries, based on the profile of each market. This way their in-app monetization opportunities could be feasible for most of the users of the app.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Dynamic ad network selection&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally, one of the key things that app publishers have to deal with, when forming their in-app advertising strategy is to choose the right ad network for their audience. One size does not fit all applies to ad networks too. Different ad networks are stronger in different countries. For example, an ad network may have very good inventory in US but in China the power of this network in terms of ad inventory, could be really weak. Having that said, app publishers should either use a mediation solution and combine networks, or based on their app’s user base profile and demographics, integrate on their own different ad networks that will target different segments of their user base. This way, they will ensure high and relevant fill rates for most of their users without any constrains and limitations based on the addressed market.&lt;/p&gt;
-
-&lt;p&gt;To conclude, app publishers should consider different and dynamic approaches when applying a monetization strategy either in terms of the model, price tiering or ad network selection when an app is introduced in different countries or markets. This approach can become very beneficial for the adoption and engagement of their apps and result in good performance in terms of revenue generation.&lt;/p&gt;
-</content>
-<category term="monetization" />
-<summary>In this blog post we will discuss about adjusting an app’s monetization strategy based on the location and market profile of its user base.</summary>
 </entry>
 </feed>

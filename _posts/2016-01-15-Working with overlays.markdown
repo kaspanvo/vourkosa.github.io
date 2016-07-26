@@ -71,7 +71,7 @@ You can read more about window tokens and how they are handled, in the following
 
 However since Android Marshmallow a special request is required with a direct action by the user in order to allow an app to create and add or remove windows above other apps (System windows). This permission is not included in the new request permission structure that was introduced in Marshmallow and follows a completely different approach. One of its major differences is that it cannot be granted through the app like all the other permissions.
 
-Since Android 6.0 developers can call <b><a href="http://developer.android.com/reference/android/provider/Settings.html#canDrawOverlays(android.content.Context)" target="_blank">Settings.canDrawOverlays() </a></b> to check if the specific context was granted permission in order to draw on top of other apps. If permission hasn't been granted yet, user can create and fire an Intent with destination set to <b>Settings.ACTION\_MANAGE\_OVERLAY\_PERMISSION</b> accompanied with URI of the package name of the app to send users directly to give permission to your app yo draw above others.
+Since Android 6.0 developers can call <b><a href="http://developer.android.com/reference/android/provider/Settings.html#canDrawOverlays(android.content.Context)" target="_blank">Settings.canDrawOverlays() </a></b> to check if the specific context was granted permission in order to draw on top of other apps. If permission hasn't been granted yet, user can create and fire an Intent with destination set to <b>Settings.ACTION_MANAGE_OVERLAY_PERMISSION</b> accompanied with URI of the package name of the app to send users directly to give permission to your app yo draw above others.
 
 ```java
 public static int OVERLAY_PERMISSION_CODE = 2525;  

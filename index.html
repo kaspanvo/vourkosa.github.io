@@ -67,6 +67,30 @@ layout: default
 </div>
 {% endif %}-->
 
+    <script type="text/javascript">
+      var pollfishConfig = {
+        api_key: "88724b49-48e9-4bbd-aee4-ee24ba112e72",
+        indicator_position: "BOTTOM_RIGHT",
+        debug: true,
+        offerwall: true,
+        // https://www.pollfish.com/docs/webplugin. 
+        // Set the ready function to prevent autostarting the survey panel
+        ready: onOfferwallReady,
+        surveyNotAvailable: onSurveyNotAvailable,
+        surveyCompletedCallback: onSurveyCompleted,
+        userNotEligibleCallback: onUserDisqualified,
+      };
+      function onOfferwallReady(data) {
+        
+          Pollfish.showFullSurvey();
+      
+      }
+ 
+    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/pollfish_production/sdk/webplugin/pollfish.min.js"></script>
+
 <!--<section id="one" >
     <div class="container">
         {% for post in site.posts limit:5 %}
